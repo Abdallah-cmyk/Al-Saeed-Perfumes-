@@ -3,78 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مجموعة السعيد | عطور وبخور فاخرة</title>
+    <title>مجموعة السعيد التجارية | Al-Saeed Trade Group</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; background-color: #050505; color: #f3f4f6; }
+        .gold-text { color: #d4af37; }
+        .bg-gold { background-color: #d4af37; }
+        .card-glass { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); backdrop-filter: blur(10px); transition: 0.3s; }
+        .card-glass:hover { border-color: #d4af37; transform: translateY(-5px); }
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://res.cloudinary.com/demo/image/upload/v1/samples/ecommerce/accessories-bag.jpg');
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1615485244993-498190d7c22e?q=80&w=2070&auto=format&fit=crop');
             background-size: cover; background-position: center;
         }
-        .gold-text { color: #d4af37; }
     </style>
 </head>
-<body class="bg-slate-50">
+<body>
 
-    <nav class="bg-black text-white p-4 sticky top-0 z-50 shadow-xl">
+    <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/5 p-3">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold tracking-tighter gold-text">مجموعة السعيد</h1>
-            <div class="space-x-reverse space-x-4 text-sm md:text-base">
-                <a href="#products" class="hover:text-amber-400 transition">المنتجات</a>
-                <a href="https://wa.me/201055880061" class="bg-amber-600 px-4 py-2 rounded-lg text-white font-bold">اطلب الآن</a>
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-white rounded-full overflow-hidden flex items-center justify-center">
+                    <span class="text-black font-bold text-[8px] text-center">LOGO<br>AL-SAEED</span>
+                </div>
+                <div class="text-lg font-bold tracking-widest gold-text">مجموعة السعيد</div>
             </div>
+            <div class="hidden lg:flex space-x-reverse space-x-6 text-xs uppercase">
+                <a href="#vegas" class="hover:text-white transition">أعواد Vegas</a>
+                <a href="#waterfall" class="hover:text-white transition">بخور الشلال</a>
+                <a href="#musk" class="hover:text-white transition">المسك</a>
+                <a href="#b2b" class="hover:text-white transition">الجملة والوكالات</a>
+            </div>
+            <a href="https://wa.me/201055880061" class="bg-gold text-black px-5 py-2 rounded font-bold text-[10px]">اتصل بنا</a>
         </div>
     </nav>
 
-    <header class="hero-section h-[70vh] flex items-center justify-center text-center text-white px-6">
-        <div>
-            <h2 class="text-4xl md:text-6xl font-bold mb-6">عطر يروي قصتك.. وبخور يملأ منزلك</h2>
-            <p class="text-xl mb-8 text-gray-300">أفخم أنواع البخور الملكي والعطور الشرقية في ستار بازار</p>
-            <a href="#products" class="border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-8 py-3 rounded-full transition font-bold">اكتشف التشكيلة</a>
+    <header class="hero-section min-h-[65vh] flex items-center justify-center text-center px-6">
+        <div class="max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight uppercase">الجودة تصنيعنا..<br><span class="gold-text italic text-3xl md:text-5xl">والفخامة اختيارنا</span></h1>
+            <p class="text-gray-400 text-sm md:text-base mb-8 max-w-2xl mx-auto font-light leading-relaxed">
+                عبقٌ يصيغُ الفخامة وابتكارٌ يحاكي الخيال. يسعدنا في مجموعة السعيد التجارية أن نضع بين أيديكم عصارة خبرتنا في تصنيع أرقى أنواع البخور والمباخر العصرية.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <a href="#vegas" class="bg-gold text-black px-8 py-3 rounded font-bold text-sm hover:bg-white transition">اكتشف منتجاتنا</a>
+            </div>
         </div>
     </header>
 
-    <section id="products" class="py-20 container mx-auto px-6">
-        <h3 class="text-3xl font-bold text-center mb-16 text-slate-800">تشكيلة ستار بازار الحصرية</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:scale-105 transition duration-300">
-                <div class="h-64 bg-slate-200 flex items-center justify-center text-gray-400 italic font-serif">صورة بخور الأهرام</div>
-                <div class="p-6 text-center">
-                    <h4 class="text-xl font-bold mb-2 text-slate-900">بخور الأهرام الملكي</h4>
-                    <p class="text-gray-600 mb-6 text-sm">رائحة فخمة تدوم طويلاً وتملأ المكان بالسكينة.</p>
-                    <a href="https://wa.me/201055880061?text=أريد%20طلب%20بخور%20الأهرام%20الملكي" class="block w-full bg-green-500 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">اطلب عبر واتساب</a>
-                </div>
+    <section id="vegas" class="py-20 container mx-auto px-6">
+        <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-2xl font-bold uppercase tracking-tighter italic">أعواد الند <span class="gold-text">Vegas</span></h2>
+            <div class="h-px flex-1 bg-white/10"></div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="card-glass p-4 rounded-xl text-center">
+                <div class="aspect-[3/4] bg-zinc-800 rounded mb-4 flex items-center justify-center text-[10px] text-gray-500 italic">Vegas - أرجوان</div>
+                <h3 class="text-sm font-bold mb-1">أعواد أرجوان</h3>
+                <p class="text-[10px] text-gray-500 mb-3">ثبات ونقاء ملكي</p>
+                <a href="https://wa.me/201055880061?text=طلب أعواد أرجوان" class="block w-full border border-gold/40 py-2 rounded text-[10px] gold-text hover:bg-gold hover:text-black transition">اطلب الآن</a>
             </div>
-
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-amber-500 hover:scale-105 transition duration-300">
-                <div class="h-64 bg-slate-200 flex items-center justify-center text-gray-400 italic font-serif">صورة عطور شرقية</div>
-                <div class="p-6 text-center">
-                    <span class="bg-amber-500 text-white text-[10px] px-3 py-1 rounded-full absolute top-4 right-4">الأكثر تميزاً</span>
-                    <h4 class="text-xl font-bold mb-2 text-slate-900">عطور شرقية فاخرة</h4>
-                    <p class="text-gray-600 mb-6 text-sm">ثبات وأناقة تعكس شخصيتك الفريدة.</p>
-                    <a href="https://wa.me/201055880061?text=أريد%20طلب%20العطور%20الشرقية" class="block w-full bg-green-500 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">اطلب عبر واتساب</a>
-                </div>
+            <div class="card-glass p-4 rounded-xl text-center border-gold/40">
+                <div class="aspect-[3/4] bg-zinc-800 rounded mb-4 flex items-center justify-center text-[10px] text-gray-500 italic">Vegas - العود كله</div>
+                <h3 class="text-sm font-bold mb-1">العود كله</h3>
+                <p class="text-[10px] text-gray-500 mb-3">أصالة الشرق</p>
+                <a href="https://wa.me/201055880061?text=طلب أعواد العود كله" class="block w-full border border-gold/40 py-2 rounded text-[10px] gold-text hover:bg-gold hover:text-black transition">اطلب الآن</a>
             </div>
+            </div>
+    </section>
 
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:scale-105 transition duration-300">
-                <div class="h-64 bg-slate-200 flex items-center justify-center text-gray-400 italic font-serif">صورة مباخر ملكية</div>
-                <div class="p-6 text-center">
-                    <h4 class="text-xl font-bold mb-2 text-slate-900">مباخر ملكية</h4>
-                    <p class="text-gray-600 mb-6 text-sm">تحف فنية تضفي لمسة جمالية وفخامة على منزلك.</p>
-                    <a href="https://wa.me/201055880061?text=أريد%20طلب%20المباخر%20الملكية" class="block w-full bg-green-500 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">اطلب عبر واتساب</a>
+    <section id="b2b" class="py-20 bg-zinc-900/30 border-y border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-10 italic">خدمات الأعمال والوكالات <span class="gold-text">(B2B)</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
+                    <div class="text-3xl mb-4">🏭</div>
+                    <h3 class="font-bold mb-2">التصنيع للغير</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">نرحب بطلبات التصنيع الخاص حسب الطلب (Custom Production) لعلامتكم التجارية.</p>
+                </div>
+                <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
+                    <div class="text-3xl mb-4">🚚</div>
+                    <h3 class="font-bold mb-2">الشحن والتوريد</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">خدمة شحن متوفرة لتصلكم فخامتنا أينما كنتم بأسعار تنافسية.</p>
+                </div>
+                <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
+                    <div class="text-3xl mb-4">🤝</div>
+                    <h3 class="font-bold mb-2">طلبات الجملة</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">تجهيز كامل لطلبات الجملة والبازارات والموزعين في كافة أنحاء العالم.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black text-white py-12 text-center">
-        <div class="mb-4 gold-text font-bold text-xl">مجموعة السعيد</div>
-        <p class="text-gray-400 text-sm mb-2">سيتي سكوير الرحاب - ستار بازار</p>
-        <p class="text-gray-500 text-xs">© 2026 Alsaeed Group. All rights reserved.</p>
+    <footer class="py-12 text-center border-t border-white/5">
+        <div class="text-xl font-bold mb-4 uppercase gold-text italic">مجموعة السعيد التجارية</div>
+        <p class="text-gray-600 text-[10px] mb-6 tracking-widest leading-loose">
+            سيتي سكوير - مدينتي - ستار بازار<br>
+            الجودة تصنيعنا.. والفخامة اختيارنا
+        </p>
+        <div class="text-[9px] text-gray-800 uppercase tracking-widest">Al-Saeed Trade Group © 2026</div>
     </footer>
 
 </body>
 </html>
-
