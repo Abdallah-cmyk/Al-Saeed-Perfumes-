@@ -2,117 +2,248 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>مجموعة السعيد التجارية - فخامة تليق بك</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجموعة السعيد التجارية | Al-Saeed Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #d4af37; /* ذهبي */
-            --secondary: #1a1a1a; /* أسود غامق */
-            --accent: #f2d06b;
-            --dark: #080808;
-            --whatsapp: #25D366;
-            --font-ar: 'Tajawal', sans-serif;
+            --gold: #d4af37;
+            --gold-light: #f2d06b;
+            --black-matte: #0a0a0a;
         }
-        body { background-color: var(--dark); color: #fff; font-family: var(--font-ar); }
-        .navbar { background: rgba(0,0,0,0.95) !important; border-bottom: 1px solid var(--primary); }
-        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1583445013765-48c22000282e?q=80&w=2070'); background-size: cover; padding: 6rem 0; border-bottom: 2px solid var(--primary); }
-        .gold-text { color: var(--primary) !important; }
-        .card { background: #111; border: 1px solid rgba(212, 175, 55, 0.2); color: #fff; transition: 0.4s; }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); }
-        .product-card-img { height: 280px; object-fit: cover; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
-        .btn-whatsapp { background: var(--whatsapp); color: #fff; border-radius: 50px; font-weight: bold; }
-        .btn-primary { background: var(--primary); color: #000; border: none; font-weight: bold; border-radius: 50px; }
-        .btn-primary:hover { background: var(--accent); color: #000; }
-        [dir=rtl] .ms-2 { margin-left: .5rem!important; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--black-matte);
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f2d06b 50%, #d4af37 100%);
+        }
+        .gold-text {
+            background: linear-gradient(to right, #d4af37, #f2d06b, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        .luxury-card {
+            background: linear-gradient(145deg, #111, #050505);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .luxury-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+        .hero-video-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            filter: grayscale(100%) brightness(0.5);
+        }
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-anim { animation: float 6s ease-in-out infinite; }
     </style>
 </head>
 <body>
 
-<script id="product-data" type="application/json">
-[
-    { "id": 1, "name": {"ar": "بخور Vegas - أرجوان", "en": "Vegas Incense - Purple"}, "category": {"ar": "بخور ملكي", "en": "Royal Incense"}, "description": {"ar": "بخور فاخر يتميز برائحة مركزة تدوم طويلاً.", "en": "Luxury incense with long-lasting concentrated scent."}, "imgSrc": "https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587119.jpg" },
-    { "id": 2, "name": {"ar": "مسك كاندي - 30 مل", "en": "Candy Musk - 30ml"}, "category": {"ar": "مجموعة المسك", "en": "Musk Collection"}, "description": {"ar": "لمسة من النعومة والبهجة برائحة الكاندي الفريدة.", "en": "A touch of softness and joy with a unique candy scent."}, "imgSrc": "https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587124.jpg" },
-    { "id": 3, "name": {"ar": "أعواد بخور لافندر", "en": "Lavender Incense Sticks"}, "category": {"ar": "أعواد ذكية", "en": "Smart Sticks"}, "description": {"ar": "أعواد بخور ذكية برائحة اللافندر المهدئة للأعصاب.", "en": "Smart incense sticks with soothing lavender scent."}, "imgSrc": "https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587137.jpg" },
-    { "id": 4, "name": {"ar": "مجموعة هدايا السعيد", "en": "Al-Saeed Gift Set"}, "category": {"ar": "صناديق هدايا", "en": "Gift Boxes"}, "description": {"ar": "تنسيق فاخر يجمع بين البخور والعطور الملكية.", "en": "Luxury arrangement of incense and royal perfumes."}, "imgSrc": "https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587284.jpg" }
-]
-</script>
-
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-        <a class="navbar-brand fw-bold gold-text" href="#"><i class="fas fa-crown me-2"></i> مجموعة السعيد</a>
-        <button class="btn btn-outline-light btn-sm ms-auto me-2" id="lang-switcher">English</button>
-        <a href="https://wa.me/201055880061" class="btn btn-whatsapp btn-sm px-3 rounded-pill">طلب سريع</a>
-    </div>
-</nav>
-
-<section class="hero text-center">
-    <div class="container">
-        <h1 class="display-4 fw-bold mb-4">مجموعة السعيد <span class="gold-text">التجارية</span></h1>
-        <p class="lead mb-5 text-gray-300">"الجودة تصنيعنا.. والفخامة اختيارنا"</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="#products" class="btn btn-primary btn-lg px-5">تصفح الكتالوج</a>
-        </div>
-    </div>
-</section>
-
-<section id="products" class="py-5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold gold-text">كتالوج المنتجات الملكية</h2>
-            <p class="text-muted">اختر منتجك المفضل واطلبه مباشرة عبر الواتساب</p>
-        </div>
-        <div id="product-list" class="row g-4">
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 transition-all duration-300 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" alt="لوجو السعيد" class="w-12 h-12 rounded-full border border-gold/50 shadow-lg shadow-gold/20">
+                <span class="text-2xl font-black gold-text hidden md:block">مجموعة السعيد</span>
             </div>
-    </div>
-</section>
+            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest">
+                <a href="#home" class="hover:text-gold transition">الرئيسية</a>
+                <a href="#about" class="hover:text-gold transition">عن المجموعة</a>
+                <a href="#products" class="hover:text-gold transition">المنتجات</a>
+                <a href="#b2b" class="hover:text-gold transition">الأعمال</a>
+            </div>
+            <a href="https://wa.me/201055880061" class="gold-gradient text-black px-6 py-2 rounded-full font-bold hover:scale-105 transition shadow-lg">تواصل معنا</a>
+        </div>
+    </nav>
 
-<footer class="py-5 border-t border-gold/20 text-center bg-black">
-    <div class="container">
-        <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" width="80" class="mb-4 rounded-full border border-gold">
-        <p class="text-muted">سيتي سكوير - مدينتي - ستار بازار (حتى 18 مارس)</p>
-        <p class="gold-text fw-bold">01055880061</p>
-        <hr class="bg-secondary my-4">
-        <p class="small text-muted">&copy; 2026 مجموعة السعيد التجارية. جميع الحقوق محفوظة.</p>
-    </div>
-</footer>
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black z-0">
+             <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent opacity-50"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <div class="mb-6 inline-block py-1 px-4 border border-gold/30 rounded-full text-xs tracking-widest text-gold uppercase animate-pulse">
+                التميز في صناعة العطور والبخور
+            </div>
+            <h1 class="text-6xl md:text-9xl font-black mb-8 leading-none">
+                فخامة <br> <span class="gold-text">لا تنتهي</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed mb-12">
+                من قلب مصر، نصيغ عبير الشرق بلمسة عالمية. مجموعة السعيد ليست مجرد تجارة، بل هي إرث من الأناقة والتميز.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#products" class="gold-gradient text-black px-10 py-4 rounded-full font-bold text-lg hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition">استعرض الكتالوج الملكي</a>
+                <a href="#b2b" class="border border-white/20 hover:border-gold px-10 py-4 rounded-full font-bold text-lg transition">خدمات الوكالات</a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-gold/50"></i>
+        </div>
+    </section>
 
-<script>
-    const WHATSAPP_NUMBER = '201055880061';
-    let currentLang = 'ar';
-    const allProducts = JSON.parse(document.getElementById('product-data').textContent);
+    <!-- Categories / Products -->
+    <section id="products" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-black mb-4 uppercase">مختاراتنا <span class="gold-text">الفاخرة</span></h2>
+                    <p class="text-gray-500 max-w-md">نقدم لكم خلاصة ابتكاراتنا في عالم البخور الذكي، المسك الصافي، والعطور التي تترك أثراً لا ينسى.</p>
+                </div>
+                <div class="flex gap-4">
+                    <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-gold hover:text-black transition"><i class="fas fa-arrow-right"></i></button>
+                    <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-gold hover:text-black transition"><i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
 
-    function renderProducts() {
-        const list = document.getElementById('product-list');
-        list.innerHTML = '';
-        allProducts.forEach(p => {
-            list.innerHTML += `
-                <div class="col-md-4 col-lg-3 col-6">
-                    <div class="card h-100 shadow-lg">
-                        <img src="${p.imgSrc}" class="product-card-img" alt="${p.name[currentLang]}">
-                        <div class="p-3 text-center">
-                            <p class="small gold-text mb-1">${p.category[currentLang]}</p>
-                            <h5 class="fw-bold mb-2">${p.name[currentLang]}</h5>
-                            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=أود الاستفسار عن: ${p.name[currentLang]}" 
-                               target="_blank" class="btn btn-whatsapp btn-sm w-100">
-                               <i class="fab fa-whatsapp me-2"></i> اطلب الآن
-                            </a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Product 1 -->
+                <div class="luxury-card rounded-[3rem] overflow-hidden group">
+                    <div class="h-96 overflow-hidden relative">
+                        <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587119.jpg" alt="بخور فيغاس" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-6 left-6 gold-gradient text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase">الأكثر مبيعاً</div>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-3">بخور Vegas الملكي</h3>
+                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">تركيبة سرية تجمع بين العود الفاخر والزيوت العطرية الفرنسية لتعطير مساحاتكم برقي.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gold font-black text-xl">متوفر الآن</span>
+                            <a href="https://wa.me/201055880061" class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-black shadow-lg shadow-gold/20 hover:rotate-12 transition"><i class="fab fa-whatsapp text-xl"></i></a>
                         </div>
                     </div>
                 </div>
-            `;
+
+                <!-- Product 2 -->
+                <div class="luxury-card rounded-[3rem] overflow-hidden group">
+                    <div class="h-96 overflow-hidden relative">
+                        <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587124.jpg" alt="مسك كاندي" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-3">مسك Candy - السعادة</h3>
+                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">عبير الطفولة والبهجة في زجاجة عطرية فاخرة. رائحة هادئة، فواحة، وتدوم لأكثر من 24 ساعة.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gold font-black text-xl">تألق فريد</span>
+                            <a href="https://wa.me/201055880061" class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-black shadow-lg shadow-gold/20 hover:rotate-12 transition"><i class="fab fa-whatsapp text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="luxury-card rounded-[3rem] overflow-hidden group">
+                    <div class="h-96 overflow-hidden relative">
+                        <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587137.jpg" alt="أعواد لافندر" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-3">أعواد اللافندر الذكية</h3>
+                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">لأصحاب الذوق الرفيع، أعواد بخور سهلة الاستخدام تعطي رائحة اللافندر الصافية بدون فحم.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gold font-black text-xl">ابتكار ذكي</span>
+                            <a href="https://wa.me/201055880061" class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-black shadow-lg shadow-gold/20 hover:rotate-12 transition"><i class="fab fa-whatsapp text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section (B2B) -->
+    <section id="b2b" class="py-32 bg-[#050505] relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-1/2 h-full gold-gradient opacity-[0.02] blur-[150px]"></div>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-5xl font-black mb-8 leading-tight">شريككم الاستراتيجي <br> في <span class="gold-text">النجاح</span></h2>
+                <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                    نحن في مجموعة السعيد لا نبيع المنتجات فقط، بل نفتح آفاقاً للتعاون التجاري. نقدم خدمات التصنيع للغير، تجهيز البازارات الدولية، وتوريد الجملة للوكلاء في جميع أنحاء العالم.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg gold-gradient flex items-center justify-center text-black shrink-0"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">تصنيع للغير (Private Label)</h4>
+                            <p class="text-gray-500 text-sm">نصنع منتجاتك الخاصة بهويتك وبجودتنا العالية.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg gold-gradient flex items-center justify-center text-black shrink-0"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">توريد الوكلاء والجملة</h4>
+                            <p class="text-gray-500 text-sm">خصومات خاصة للوكلاء والكميات الكبيرة للتصدير.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-4 gold-gradient opacity-10 blur-2xl rounded-full"></div>
+                <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587284.jpg" alt="خدمات الأعمال" class="relative rounded-[4rem] border border-white/10 shadow-2xl float-anim">
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto luxury-card p-20 rounded-[4rem] relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-64 h-64 gold-gradient opacity-10 blur-[100px]"></div>
+            <h2 class="text-4xl md:text-6xl font-black mb-8">هل أنت مستعد <br> <span class="gold-text">لتجربة الفخامة؟</span></h2>
+            <p class="text-gray-400 mb-12 text-lg">تواصل مع فريق المبيعات لدينا الآن للحصول على أفضل العروض والكتالوج الكامل.</p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="https://wa.me/201055880061" class="gold-gradient text-black px-12 py-5 rounded-full font-black text-xl shadow-2xl hover:scale-105 transition">اطلب عبر واتساب</a>
+                <span class="text-gray-600 font-bold uppercase tracking-widest text-sm">أو اتصل بنا: 01055880061</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-black border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-right">
+                <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" alt="Logo" class="w-24 h-24 rounded-full mx-auto md:mx-0 mb-6 border border-gold/30 p-1">
+                <p class="text-gray-500 max-w-xs leading-relaxed">مجموعة السعيد التجارية - الريادة في عالم العطور والبخور منذ سنوات من العطاء والتميز.</p>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-4">
+                <div class="flex gap-6 mb-4">
+                    <a href="#" class="text-2xl text-gray-500 hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-2xl text-gray-500 hover:text-gold transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-2xl text-gray-500 hover:text-gold transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="text-xs text-gray-700 uppercase tracking-widest">Al-Saeed Group &copy; 2026. Crafted for Royalty.</p>
+                <p class="text-[10px] text-gray-800">Designed by Gemini Pro Architecture</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-2xl');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2', 'shadow-2xl');
+            }
         });
-    }
-
-    document.getElementById('lang-switcher').addEventListener('click', () => {
-        currentLang = currentLang === 'ar' ? 'en' : 'ar';
-        document.getElementById('lang-switcher').textContent = currentLang === 'ar' ? 'English' : 'العربية';
-        renderProducts();
-    });
-
-    renderProducts();
-</script>
+    </script>
 </body>
 </html>
+
