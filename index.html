@@ -3,104 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مجموعة السعيد التجارية | Al-Saeed Trade Group</title>
+    <title>مجموعة السعيد | Al-Saeed Group</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; background-color: #050505; color: #f3f4f6; }
-        .gold-text { color: #d4af37; }
-        .bg-gold { background-color: #d4af37; }
-        .card-glass { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); backdrop-filter: blur(10px); transition: 0.3s; }
-        .card-glass:hover { border-color: #d4af37; transform: translateY(-5px); }
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1615485244993-498190d7c22e?q=80&w=2070&auto=format&fit=crop');
+        body { font-family: 'Tajawal', sans-serif; background-color: #000; color: #fff; }
+        .lattafa-gold { color: #c5a059; }
+        .lattafa-bg-gold { background-color: #c5a059; }
+        .announcement-bar { background-color: #1a1a1a; font-size: 12px; letter-spacing: 1px; }
+        .product-card { background: #111; border: 1px solid #222; transition: 0.3s ease-in-out; }
+        .product-card:hover { border-color: #c5a059; }
+        .hero-video-placeholder {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1583445013765-48c22000282e?q=80&w=2070&auto=format&fit=crop');
             background-size: cover; background-position: center;
         }
     </style>
 </head>
 <body>
 
-    <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/5 p-3">
+    <div class="announcement-bar text-center py-2 text-white uppercase font-bold">
+        شحن مجاني للطلبات فوق 1000 جنيه | متواجدون في ستار بازار الآن
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-black/90 border-b border-white/10 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-white rounded-full overflow-hidden flex items-center justify-center">
-                    <span class="text-black font-bold text-[8px] text-center">LOGO<br>AL-SAEED</span>
+            <div class="flex items-center gap-6">
+                <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" alt="Al Saeed Logo" class="w-16 h-16 object-contain">
+                <div class="hidden md:flex space-x-reverse space-x-8 text-[13px] font-bold uppercase tracking-widest">
+                    <a href="#new" class="hover:lattafa-gold transition">وصل حديثاً</a>
+                    <a href="#bestsellers" class="hover:lattafa-gold transition">الأكثر مبيعاً</a>
+                    <a href="#collections" class="hover:lattafa-gold transition">المجموعات</a>
                 </div>
-                <div class="text-lg font-bold tracking-widest gold-text">مجموعة السعيد</div>
             </div>
-            <div class="hidden lg:flex space-x-reverse space-x-6 text-xs uppercase">
-                <a href="#vegas" class="hover:text-white transition">أعواد Vegas</a>
-                <a href="#waterfall" class="hover:text-white transition">بخور الشلال</a>
-                <a href="#musk" class="hover:text-white transition">المسك</a>
-                <a href="#b2b" class="hover:text-white transition">الجملة والوكالات</a>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/201055880061" class="lattafa-bg-gold text-black px-6 py-2 text-xs font-bold uppercase">اطلب الآن</a>
             </div>
-            <a href="https://wa.me/201055880061" class="bg-gold text-black px-5 py-2 rounded font-bold text-[10px]">اتصل بنا</a>
         </div>
     </nav>
 
-    <header class="hero-section min-h-[65vh] flex items-center justify-center text-center px-6">
-        <div class="max-w-4xl">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight uppercase">الجودة تصنيعنا..<br><span class="gold-text italic text-3xl md:text-5xl">والفخامة اختيارنا</span></h1>
-            <p class="text-gray-400 text-sm md:text-base mb-8 max-w-2xl mx-auto font-light leading-relaxed">
-                عبقٌ يصيغُ الفخامة وابتكارٌ يحاكي الخيال. يسعدنا في مجموعة السعيد التجارية أن نضع بين أيديكم عصارة خبرتنا في تصنيع أرقى أنواع البخور والمباخر العصرية.
-            </p>
-            <div class="flex gap-4 justify-center">
-                <a href="#vegas" class="bg-gold text-black px-8 py-3 rounded font-bold text-sm hover:bg-white transition">اكتشف منتجاتنا</a>
-            </div>
+    <header class="hero-video-placeholder h-[70vh] flex items-center px-10">
+        <div class="max-w-xl">
+            <h2 class="text-xs lattafa-gold font-bold mb-4 tracking-[0.3em] uppercase">مجموعة السعيد التجارية</h2>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">فخامة <br> تليق بك</h1>
+            <p class="text-gray-300 mb-8 font-light italic text-lg">"الجودة تصنيعنا.. والفخامة اختيارنا"</p>
+            <a href="#shop" class="inline-block border border-white px-10 py-4 text-xs font-bold hover:bg-white hover:text-black transition">تسوق التشكيلة</a>
         </div>
     </header>
 
-    <section id="vegas" class="py-20 container mx-auto px-6">
-        <div class="flex items-center gap-4 mb-12">
-            <h2 class="text-2xl font-bold uppercase tracking-tighter italic">أعواد الند <span class="gold-text">Vegas</span></h2>
-            <div class="h-px flex-1 bg-white/10"></div>
+    <section id="shop" class="py-20 container mx-auto px-6">
+        <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-4">
+            <h2 class="text-2xl font-bold uppercase italic">وصل حديثاً <span class="lattafa-gold">/ New Arrivals</span></h2>
+            <a href="#" class="text-xs underline lattafa-gold">عرض الكل</a>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="card-glass p-4 rounded-xl text-center">
-                <div class="aspect-[3/4] bg-zinc-800 rounded mb-4 flex items-center justify-center text-[10px] text-gray-500 italic">Vegas - أرجوان</div>
-                <h3 class="text-sm font-bold mb-1">أعواد أرجوان</h3>
-                <p class="text-[10px] text-gray-500 mb-3">ثبات ونقاء ملكي</p>
-                <a href="https://wa.me/201055880061?text=طلب أعواد أرجوان" class="block w-full border border-gold/40 py-2 rounded text-[10px] gold-text hover:bg-gold hover:text-black transition">اطلب الآن</a>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="product-card p-4 group">
+                <div class="relative overflow-hidden mb-4 bg-zinc-900 aspect-square flex items-center justify-center">
+                    <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587119.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-2 text-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-[10px] font-bold">عرض التفاصيل</span>
+                    </div>
+                </div>
+                <h3 class="text-sm font-bold mb-1">أعواد Vegas - أرجوان</h3>
+                <p class="text-[10px] lattafa-gold mb-4 uppercase tracking-widest">بخور ملكي</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm font-bold">150 EGP</span>
+                    <button class="bg-white text-black p-2 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1a.5.5 0 0 1 .5.5v6h6a.5.5 0 0 1 0 1h-6v6a.5.5 0 0 1-1 0v-6h-6a.5.5 0 0 1 0-1h6v-6A.5.5 0 0 1 8 1z"/></svg></button>
+                </div>
             </div>
-            <div class="card-glass p-4 rounded-xl text-center border-gold/40">
-                <div class="aspect-[3/4] bg-zinc-800 rounded mb-4 flex items-center justify-center text-[10px] text-gray-500 italic">Vegas - العود كله</div>
-                <h3 class="text-sm font-bold mb-1">العود كله</h3>
-                <p class="text-[10px] text-gray-500 mb-3">أصالة الشرق</p>
-                <a href="https://wa.me/201055880061?text=طلب أعواد العود كله" class="block w-full border border-gold/40 py-2 rounded text-[10px] gold-text hover:bg-gold hover:text-black transition">اطلب الآن</a>
+
+            <div class="product-card p-4 group border-lattafa-gold">
+                <div class="relative overflow-hidden mb-4 bg-zinc-900 aspect-square flex items-center justify-center">
+                    <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587124.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <h3 class="text-sm font-bold mb-1">مسك كاندي - 30 مل</h3>
+                <p class="text-[10px] lattafa-gold mb-4 uppercase tracking-widest">مجموعة المسك</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm font-bold">250 EGP</span>
+                    <button class="bg-white text-black p-2 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1a.5.5 0 0 1 .5.5v6h6a.5.5 0 0 1 0 1h-6v6a.5.5 0 0 1-1 0v-6h-6a.5.5 0 0 1 0-1h6v-6A.5.5 0 0 1 8 1z"/></svg></button>
+                </div>
             </div>
+            
             </div>
     </section>
 
-    <section id="b2b" class="py-20 bg-zinc-900/30 border-y border-white/5">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold mb-10 italic">خدمات الأعمال والوكالات <span class="gold-text">(B2B)</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
-                    <div class="text-3xl mb-4">🏭</div>
-                    <h3 class="font-bold mb-2">التصنيع للغير</h3>
-                    <p class="text-xs text-gray-500 leading-relaxed">نرحب بطلبات التصنيع الخاص حسب الطلب (Custom Production) لعلامتكم التجارية.</p>
-                </div>
-                <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
-                    <div class="text-3xl mb-4">🚚</div>
-                    <h3 class="font-bold mb-2">الشحن والتوريد</h3>
-                    <p class="text-xs text-gray-500 leading-relaxed">خدمة شحن متوفرة لتصلكم فخامتنا أينما كنتم بأسعار تنافسية.</p>
-                </div>
-                <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
-                    <div class="text-3xl mb-4">🤝</div>
-                    <h3 class="font-bold mb-2">طلبات الجملة</h3>
-                    <p class="text-xs text-gray-500 leading-relaxed">تجهيز كامل لطلبات الجملة والبازارات والموزعين في كافة أنحاء العالم.</p>
-                </div>
-            </div>
+    <footer class="py-20 bg-zinc-950 border-t border-white/5 text-center px-6">
+        <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" class="w-20 mx-auto mb-8 opacity-50">
+        <div class="flex justify-center space-x-reverse space-x-10 mb-10 text-[10px] uppercase tracking-widest text-gray-500">
+            <a href="#">سياسة الخصوصية</a>
+            <a href="#">الشحن والتوصيل</a>
+            <a href="#">تواصل معنا</a>
         </div>
-    </section>
-
-    <footer class="py-12 text-center border-t border-white/5">
-        <div class="text-xl font-bold mb-4 uppercase gold-text italic">مجموعة السعيد التجارية</div>
-        <p class="text-gray-600 text-[10px] mb-6 tracking-widest leading-loose">
-            سيتي سكوير - مدينتي - ستار بازار<br>
-            الجودة تصنيعنا.. والفخامة اختيارنا
-        </p>
-        <div class="text-[9px] text-gray-800 uppercase tracking-widest">Al-Saeed Trade Group © 2026</div>
+        <p class="text-[9px] text-gray-700 uppercase tracking-[0.5em]">Al-Saeed Trading Group © 2026</p>
     </footer>
 
 </body>
