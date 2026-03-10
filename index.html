@@ -3,99 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مجموعة السعيد | Al-Saeed Group</title>
+    <title>مجموعة السعيد التجارية | Al-Saeed Group</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Tajawal', sans-serif; background-color: #000; color: #fff; }
-        .lattafa-gold { color: #c5a059; }
-        .lattafa-bg-gold { background-color: #c5a059; }
-        .announcement-bar { background-color: #1a1a1a; font-size: 12px; letter-spacing: 1px; }
-        .product-card { background: #111; border: 1px solid #222; transition: 0.3s ease-in-out; }
-        .product-card:hover { border-color: #c5a059; }
-        .hero-video-placeholder {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1583445013765-48c22000282e?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-        }
+        body { font-family: 'Tajawal', sans-serif; background-color: #080808; color: #fff; overflow-x: hidden; }
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f2d06b 50%, #d4af37 100%); }
+        .gold-text { background: linear-gradient(to right, #d4af37, #f2d06b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-premium { background: linear-gradient(145deg, #111, #0a0a0a); border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .card-premium:hover { border-color: #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.15); transform: translateY(-5px); transition: all 0.4s ease; }
+        .hero-overlay { background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, rgba(0,0,0,1) 70%); }
     </style>
 </head>
 <body>
 
-    <div class="announcement-bar text-center py-2 text-white uppercase font-bold">
-        شحن مجاني للطلبات فوق 1000 جنيه | متواجدون في ستار بازار الآن
-    </div>
-
-    <nav class="sticky top-0 z-50 bg-black/90 border-b border-white/10 p-4">
+    <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-gold/10 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-6">
-                <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" alt="Al Saeed Logo" class="w-16 h-16 object-contain">
-                <div class="hidden md:flex space-x-reverse space-x-8 text-[13px] font-bold uppercase tracking-widest">
-                    <a href="#new" class="hover:lattafa-gold transition">وصل حديثاً</a>
-                    <a href="#bestsellers" class="hover:lattafa-gold transition">الأكثر مبيعاً</a>
-                    <a href="#collections" class="hover:lattafa-gold transition">المجموعات</a>
-                </div>
-            </div>
             <div class="flex items-center gap-4">
-                <a href="https://wa.me/201055880061" class="lattafa-bg-gold text-black px-6 py-2 text-xs font-bold uppercase">اطلب الآن</a>
+                <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" alt="Logo" class="w-12 h-12 rounded-full border border-gold/30">
+                <span class="text-xl font-bold gold-text">مجموعة السعيد التجارية</span>
             </div>
+            <a href="https://wa.me/201055880061" class="gold-gradient text-black px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition">اطلب الآن</a>
         </div>
     </nav>
 
-    <header class="hero-video-placeholder h-[70vh] flex items-center px-10">
-        <div class="max-w-xl">
-            <h2 class="text-xs lattafa-gold font-bold mb-4 tracking-[0.3em] uppercase">مجموعة السعيد التجارية</h2>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">فخامة <br> تليق بك</h1>
-            <p class="text-gray-300 mb-8 font-light italic text-lg">"الجودة تصنيعنا.. والفخامة اختيارنا"</p>
-            <a href="#shop" class="inline-block border border-white px-10 py-4 text-xs font-bold hover:bg-white hover:text-black transition">تسوق التشكيلة</a>
-        </div>
-    </header>
-
-    <section id="shop" class="py-20 container mx-auto px-6">
-        <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-4">
-            <h2 class="text-2xl font-bold uppercase italic">وصل حديثاً <span class="lattafa-gold">/ New Arrivals</span></h2>
-            <a href="#" class="text-xs underline lattafa-gold">عرض الكل</a>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="product-card p-4 group">
-                <div class="relative overflow-hidden mb-4 bg-zinc-900 aspect-square flex items-center justify-center">
-                    <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587119.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-2 text-center opacity-0 group-hover:opacity-100 transition">
-                        <span class="text-[10px] font-bold">عرض التفاصيل</span>
-                    </div>
-                </div>
-                <h3 class="text-sm font-bold mb-1">أعواد Vegas - أرجوان</h3>
-                <p class="text-[10px] lattafa-gold mb-4 uppercase tracking-widest">بخور ملكي</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-sm font-bold">150 EGP</span>
-                    <button class="bg-white text-black p-2 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1a.5.5 0 0 1 .5.5v6h6a.5.5 0 0 1 0 1h-6v6a.5.5 0 0 1-1 0v-6h-6a.5.5 0 0 1 0-1h6v-6A.5.5 0 0 1 8 1z"/></svg></button>
-                </div>
-            </div>
-
-            <div class="product-card p-4 group border-lattafa-gold">
-                <div class="relative overflow-hidden mb-4 bg-zinc-900 aspect-square flex items-center justify-center">
-                    <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587124.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                </div>
-                <h3 class="text-sm font-bold mb-1">مسك كاندي - 30 مل</h3>
-                <p class="text-[10px] lattafa-gold mb-4 uppercase tracking-widest">مجموعة المسك</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-sm font-bold">250 EGP</span>
-                    <button class="bg-white text-black p-2 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1a.5.5 0 0 1 .5.5v6h6a.5.5 0 0 1 0 1h-6v6a.5.5 0 0 1-1 0v-6h-6a.5.5 0 0 1 0-1h6v-6A.5.5 0 0 1 8 1z"/></svg></button>
-                </div>
-            </div>
-            
-            </div>
-    </section>
-
-    <footer class="py-20 bg-zinc-950 border-t border-white/5 text-center px-6">
-        <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" class="w-20 mx-auto mb-8 opacity-50">
-        <div class="flex justify-center space-x-reverse space-x-10 mb-10 text-[10px] uppercase tracking-widest text-gray-500">
-            <a href="#">سياسة الخصوصية</a>
-            <a href="#">الشحن والتوصيل</a>
-            <a href="#">تواصل معنا</a>
-        </div>
-        <p class="text-[9px] text-gray-700 uppercase tracking-[0.5em]">Al-Saeed Trading Group © 2026</p>
-    </footer>
-
-</body>
-</html>
+    <header class="relative min-h-[80vh] flex items-center justify-center text-center px-6 hero-overlay">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-8xl font-bold mb-8 tracking-tighter uppercase leading-none">
+                أناقة <span class="gold-text italic">الشرق</span> <br> في أبهى صورها
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">
+                "عبقٌ يصيغُ الفخامة وابتكارٌ يحاكي الخيال" - نجمع بين أصالة المكونات وحداثة الإنتاج لنقدم تجربة عطرية لا تُنسى.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#products" class="
