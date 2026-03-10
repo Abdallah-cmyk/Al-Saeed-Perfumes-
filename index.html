@@ -2,38 +2,117 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مجموعة السعيد التجارية | Al-Saeed Group</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>مجموعة السعيد التجارية - فخامة تليق بك</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Tajawal', sans-serif; background-color: #080808; color: #fff; overflow-x: hidden; }
-        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f2d06b 50%, #d4af37 100%); }
-        .gold-text { background: linear-gradient(to right, #d4af37, #f2d06b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-premium { background: linear-gradient(145deg, #111, #0a0a0a); border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .card-premium:hover { border-color: #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.15); transform: translateY(-5px); transition: all 0.4s ease; }
-        .hero-overlay { background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, rgba(0,0,0,1) 70%); }
+        :root {
+            --primary: #d4af37; /* ذهبي */
+            --secondary: #1a1a1a; /* أسود غامق */
+            --accent: #f2d06b;
+            --dark: #080808;
+            --whatsapp: #25D366;
+            --font-ar: 'Tajawal', sans-serif;
+        }
+        body { background-color: var(--dark); color: #fff; font-family: var(--font-ar); }
+        .navbar { background: rgba(0,0,0,0.95) !important; border-bottom: 1px solid var(--primary); }
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1583445013765-48c22000282e?q=80&w=2070'); background-size: cover; padding: 6rem 0; border-bottom: 2px solid var(--primary); }
+        .gold-text { color: var(--primary) !important; }
+        .card { background: #111; border: 1px solid rgba(212, 175, 55, 0.2); color: #fff; transition: 0.4s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        .product-card-img { height: 280px; object-fit: cover; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .btn-whatsapp { background: var(--whatsapp); color: #fff; border-radius: 50px; font-weight: bold; }
+        .btn-primary { background: var(--primary); color: #000; border: none; font-weight: bold; border-radius: 50px; }
+        .btn-primary:hover { background: var(--accent); color: #000; }
+        [dir=rtl] .ms-2 { margin-left: .5rem!important; }
     </style>
 </head>
 <body>
 
-    <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-gold/10 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" alt="Logo" class="w-12 h-12 rounded-full border border-gold/30">
-                <span class="text-xl font-bold gold-text">مجموعة السعيد التجارية</span>
-            </div>
-            <a href="https://wa.me/201055880061" class="gold-gradient text-black px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition">اطلب الآن</a>
-        </div>
-    </nav>
+<script id="product-data" type="application/json">
+[
+    { "id": 1, "name": {"ar": "بخور Vegas - أرجوان", "en": "Vegas Incense - Purple"}, "category": {"ar": "بخور ملكي", "en": "Royal Incense"}, "description": {"ar": "بخور فاخر يتميز برائحة مركزة تدوم طويلاً.", "en": "Luxury incense with long-lasting concentrated scent."}, "imgSrc": "https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587119.jpg" },
+    { "id": 2, "name": {"ar": "مسك كاندي - 30 مل", "en": "Candy Musk - 30ml"}, "category": {"ar": "مجموعة المسك", "en": "Musk Collection"}, "description": {"ar": "لمسة من النعومة والبهجة برائحة الكاندي الفريدة.", "en": "A touch of softness and joy with a unique candy scent."}, "imgSrc": "https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587124.jpg" },
+    { "id": 3, "name": {"ar": "أعواد بخور لافندر", "en": "Lavender Incense Sticks"}, "category": {"ar": "أعواد ذكية", "en": "Smart Sticks"}, "description": {"ar": "أعواد بخور ذكية برائحة اللافندر المهدئة للأعصاب.", "en": "Smart incense sticks with soothing lavender scent."}, "imgSrc": "https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587137.jpg" },
+    { "id": 4, "name": {"ar": "مجموعة هدايا السعيد", "en": "Al-Saeed Gift Set"}, "category": {"ar": "صناديق هدايا", "en": "Gift Boxes"}, "description": {"ar": "تنسيق فاخر يجمع بين البخور والعطور الملكية.", "en": "Luxury arrangement of incense and royal perfumes."}, "imgSrc": "https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587284.jpg" }
+]
+</script>
 
-    <header class="relative min-h-[80vh] flex items-center justify-center text-center px-6 hero-overlay">
-        <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-8xl font-bold mb-8 tracking-tighter uppercase leading-none">
-                أناقة <span class="gold-text italic">الشرق</span> <br> في أبهى صورها
-            </h1>
-            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">
-                "عبقٌ يصيغُ الفخامة وابتكارٌ يحاكي الخيال" - نجمع بين أصالة المكونات وحداثة الإنتاج لنقدم تجربة عطرية لا تُنسى.
-            </p>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="#products" class="
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold gold-text" href="#"><i class="fas fa-crown me-2"></i> مجموعة السعيد</a>
+        <button class="btn btn-outline-light btn-sm ms-auto me-2" id="lang-switcher">English</button>
+        <a href="https://wa.me/201055880061" class="btn btn-whatsapp btn-sm px-3 rounded-pill">طلب سريع</a>
+    </div>
+</nav>
+
+<section class="hero text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">مجموعة السعيد <span class="gold-text">التجارية</span></h1>
+        <p class="lead mb-5 text-gray-300">"الجودة تصنيعنا.. والفخامة اختيارنا"</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="#products" class="btn btn-primary btn-lg px-5">تصفح الكتالوج</a>
+        </div>
+    </div>
+</section>
+
+<section id="products" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold gold-text">كتالوج المنتجات الملكية</h2>
+            <p class="text-muted">اختر منتجك المفضل واطلبه مباشرة عبر الواتساب</p>
+        </div>
+        <div id="product-list" class="row g-4">
+            </div>
+    </div>
+</section>
+
+<footer class="py-5 border-t border-gold/20 text-center bg-black">
+    <div class="container">
+        <img src="https://abdallah-cmyk.github.io/Al-Saeed-perfumes/1000587269.png" width="80" class="mb-4 rounded-full border border-gold">
+        <p class="text-muted">سيتي سكوير - مدينتي - ستار بازار (حتى 18 مارس)</p>
+        <p class="gold-text fw-bold">01055880061</p>
+        <hr class="bg-secondary my-4">
+        <p class="small text-muted">&copy; 2026 مجموعة السعيد التجارية. جميع الحقوق محفوظة.</p>
+    </div>
+</footer>
+
+<script>
+    const WHATSAPP_NUMBER = '201055880061';
+    let currentLang = 'ar';
+    const allProducts = JSON.parse(document.getElementById('product-data').textContent);
+
+    function renderProducts() {
+        const list = document.getElementById('product-list');
+        list.innerHTML = '';
+        allProducts.forEach(p => {
+            list.innerHTML += `
+                <div class="col-md-4 col-lg-3 col-6">
+                    <div class="card h-100 shadow-lg">
+                        <img src="${p.imgSrc}" class="product-card-img" alt="${p.name[currentLang]}">
+                        <div class="p-3 text-center">
+                            <p class="small gold-text mb-1">${p.category[currentLang]}</p>
+                            <h5 class="fw-bold mb-2">${p.name[currentLang]}</h5>
+                            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=أود الاستفسار عن: ${p.name[currentLang]}" 
+                               target="_blank" class="btn btn-whatsapp btn-sm w-100">
+                               <i class="fab fa-whatsapp me-2"></i> اطلب الآن
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    document.getElementById('lang-switcher').addEventListener('click', () => {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        document.getElementById('lang-switcher').textContent = currentLang === 'ar' ? 'English' : 'العربية';
+        renderProducts();
+    });
+
+    renderProducts();
+</script>
+</body>
+</html>
