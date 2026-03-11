@@ -6,388 +6,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مجموعة السعيد التجارية</title>
+<title>مجموعة السعيد للعطور والبخور</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;900&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Cairo',sans-serif;
-}
-
 body{
-background:linear-gradient(135deg,#020617,#0f172a);
+margin:0;
+font-family:'Cairo',sans-serif;
+background:#000;
 color:white;
 }
 
-/* NAVBAR */
-
-.navbar{
+header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
+padding:20px 60px;
+background:black;
+border-bottom:1px solid #333;
 }
 
 .logo{
-font-size:26px;
+font-size:28px;
 font-weight:900;
-color:#FFD700;
+color:#D4AF37;
 }
 
-.cart{
-cursor:pointer;
-font-size:20px;
-}
-
-/* HERO */
-
-.hero{
-text-align:center;
-padding:80px 20px;
-}
-
-.hero h1{
-font-size:50px;
-color:#FFD700;
-margin-bottom:10px;
-}
-
-.hero p{
-color:#ccc;
-}
-
-/* PRODUCTS */
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-padding:50px;
-}
-
-.product{
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:15px;
-text-align:center;
-transition:.3s;
-}
-
-.product:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(255,215,0,0.2);
-}
-
-.product img{
-width:140px;
-height:180px;
-object-fit:contain;
-margin-bottom:15px;
-}
-
-.product h3{
-color:#FFD700;
-margin-bottom:10px;
-}
-
-.product p{
-font-size:14px;
-color:#aaa;
-margin-bottom:10px;
-}
-
-.price{
-font-size:20px;
-margin-bottom:15px;
-}
-
-button{
-padding:8px 20px;
-border:1px solid #FFD700;
-background:transparent;
-color:#FFD700;
-border-radius:20px;
-cursor:pointer;
-}
-
-button:hover{
-background:#FFD700;
-color:black;
-}
-
-/* FOOTER */
-
-.footer{
-text-align:center;
-padding:30px;
-background:rgba(255,255,255,0.05);
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="navbar">
-
-<div class="logo">AL SAEED</div>
-
-<div class="cart">🛒</div>
-
-</div>
-
-<div class="hero">
-
-<h1>مجموعة السعيد التجارية</h1>
-
-<p>عطور – بخور – مسك – مباخر فاخرة</p>
-
-</div>
-
-<div class="products" id="products"></div>
-
-<div class="footer">
-
-© 2026 AL SAEED TRADING GROUP
-
-</div>
-
-<script>
-
-const products=[
-
-{
-name:"Vegas Stick Collection",
-price:220,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"أعواد بخور فاخرة تحتوي على: عود السديم، روعة المسك، أصيل الطيب، عود جودي، أميرة غرامي، الأرجوان."
-},
-
-{
-name:"Vegas Cubes",
-price:240,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"مكعبات بخور مضغوطة بروائح Vegas Discovery و Vegas Secret و Vegas Code."
-},
-
-{
-name:"Vegas Bullet Collection",
-price:210,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"بخور مركز يحتوي: عود منسية، صقر عماني، سراب، لبان، شيراز، عود السيوف."
-},
-
-{
-name:"Chocolate Incense",
-price:230,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"بخور مبتكر على شكل شوكولاتة بروائح روعة الشرق وعود مذهل."
-},
-
-{
-name:"Land of the Nile Collection",
-price:260,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"مجموعة مستوحاة من المدن المصرية: سيوة، الجيزة، الأقصر، أسوان، الإسكندرية."
-},
-
-{
-name:"Pharaonic Collection",
-price:270,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"بخور فاخر بروائح نفرتيتي وتوت عنخ آمون وكليوباترا."
-},
-
-{
-name:"Musk Al Aroosa Set",
-price:450,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"طقم مسك العروسة يحتوي ثلاث زجاجات مسك مركز 30 مل."
-},
-
-{
-name:"Body Splash Collection",
-price:120,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"معطرات جسم بروائح 212 Sexy و Good Girls و Coco Mademoiselle."
-},
-
-{
-name:"Backflow Incense Burner",
-price:350,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"مبخرة حديثة بتقنية التدفق العكسي للدخان."
-}
-
-];
-
-const container=document.getElementById("products");
-
-products.forEach(p=>{
-
-container.innerHTML+=`
-
-<div class="product">
-
-<img src="${p.img}">
-
-<h3>${p.name}</h3>
-
-<p>${p.desc}</p>
-
-<div class="price">${p.price} جنيه</div>
-
-<button>أضف للسلة</button>
-
-</div>
-
-`;
-
-});
-
-</script>
-
-</body>
-
-</html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>متجر السعيد للعطور والبخور</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Cairo',sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#020617,#0f172a);
+nav a{
 color:white;
+margin:0 15px;
+text-decoration:none;
+font-size:16px;
 }
-
-/* HEADER */
-
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-}
-
-.logo{
-font-size:26px;
-font-weight:900;
-color:#FFD700;
-}
-
-.contact{
-font-size:14px;
-color:#ccc;
-}
-
-/* HERO */
 
 .hero{
+height:500px;
+background:url("https://images.unsplash.com/photo-1592945403244-b3fbafd7f539") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:80px 20px;
 }
 
 .hero h1{
 font-size:48px;
-color:#FFD700;
-margin-bottom:10px;
+background:rgba(0,0,0,0.5);
+padding:20px 40px;
+border:1px solid #D4AF37;
 }
 
-.hero p{
-color:#ccc;
+.section{
+padding:60px;
 }
 
-/* PRODUCTS */
+.section h2{
+color:#D4AF37;
+margin-bottom:40px;
+text-align:center;
+}
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-padding:40px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
 }
 
 .product{
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:15px;
+background:#0a0a0a;
+padding:20px;
+border-radius:10px;
+border:1px solid #222;
 text-align:center;
 transition:.3s;
 }
 
 .product:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(255,215,0,0.2);
+transform:translateY(-5px);
+border-color:#D4AF37;
 }
 
 .product img{
-width:140px;
+width:180px;
 height:180px;
-object-fit:contain;
-margin-bottom:15px;
-}
-
-.product h3{
-color:#FFD700;
-margin-bottom:10px;
-}
-
-.product p{
-font-size:14px;
-color:#aaa;
+object-fit:cover;
 margin-bottom:15px;
 }
 
 .price{
+color:#D4AF37;
 font-size:20px;
-margin-bottom:15px;
+margin:10px 0;
 }
 
-button{
+.btn{
+background:#D4AF37;
+color:black;
 padding:10px 20px;
-border:1px solid #FFD700;
-background:transparent;
-color:#FFD700;
+border:none;
 border-radius:20px;
 cursor:pointer;
+text-decoration:none;
 }
-
-button:hover{
-background:#FFD700;
-color:black;
-}
-
-/* FOOTER */
 
 .footer{
+background:#0a0a0a;
+padding:40px;
 text-align:center;
-padding:30px;
-background:rgba(255,255,255,0.05);
+border-top:1px solid #222;
+}
+
+.social a{
+color:#D4AF37;
+margin:0 10px;
+text-decoration:none;
 }
 
 </style>
@@ -396,128 +129,93 @@ background:rgba(255,255,255,0.05);
 
 <body>
 
-<div class="header">
+<header>
 
-<div class="logo">AL SAEED</div>
+<div class="logo">مجموعة السعيد</div>
 
-<div class="contact">
+<nav>
 
-القاهرة - مصر
+<a href="#">الرئيسية</a>
+<a href="#">العطور</a>
+<a href="#">البخور</a>
+<a href="#">المسك</a>
+<a href="#">تواصل</a>
 
-</div>
+</nav>
 
-</div>
+</header>
 
-<div class="hero">
+<section class="hero">
 
-<h1>متجر السعيد للعطور والبخور</h1>
+<h1>عالم العطور الشرقية الفاخرة</h1>
 
-<p>منتجات عطرية فاخرة مختارة بعناية</p>
+</section>
 
-</div>
+<section class="section">
 
-<div class="products" id="products"></div>
+<h2>أفضل المنتجات</h2>
 
-<div class="footer">
-
-© 2026 AL SAEED TRADING GROUP
-
-</div>
-
-<script>
-
-const products=[
-
-{
-name:"مجموعة البخور الفاخر",
-price:220,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"تشكيلة أعواد بخور برائحة شرقية غنية تمنح المكان أجواء هادئة وفاخرة."
-},
-
-{
-name:"مجموعة البخور المكعب",
-price:240,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"مكعبات بخور مضغوطة مشبعة بالزيوت العطرية تدوم لفترة طويلة."
-},
-
-{
-name:"مجموعة البخور المركز",
-price:210,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"خلطات عود ولبان شرقي بروائح قوية وثبات عالي."
-},
-
-{
-name:"بخور قطع فاخرة",
-price:230,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"قطع بخور سهلة الاستخدام تعطي احتراق متوازن ورائحة عميقة."
-},
-
-{
-name:"مجموعة أرض النيل",
-price:260,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"تشكيلة مستوحاة من مدن مصر التاريخية بثبات عطري طويل."
-},
-
-{
-name:"المجموعة الفرعونية",
-price:270,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"بخور فاخر بروائح ملكية مستوحاة من الحضارة المصرية."
-},
-
-{
-name:"طقم مسك العروسة",
-price:450,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"ثلاث زجاجات مسك مركز برائحة نظيفة ومنعشة داخل علبة فاخرة."
-},
-
-{
-name:"معطرات الجسم",
-price:120,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"معطرات جسم خفيفة للاستخدام اليومي بثبات جيد."
-},
-
-{
-name:"المبخرة الزجاجية الذكية",
-price:350,
-img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
-desc:"مبخرة بتصميم عصري مع تأثير تدفق دخان جمالي."
-}
-
-];
-
-const container=document.getElementById("products");
-
-products.forEach(p=>{
-
-container.innerHTML+=`
+<div class="products">
 
 <div class="product">
 
-<img src="${p.img}">
+<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
 
-<h3>${p.name}</h3>
+<h3>بخور فاخر</h3>
 
-<p>${p.desc}</p>
+<p>رائحة شرقية أصيلة تدوم طويلاً</p>
 
-<div class="price">${p.price} جنيه</div>
+<div class="price">220 جنيه</div>
 
-<button>اطلب الآن</button>
+<a class="btn" href="https://wa.me/201055880061?text=أريد طلب بخور فاخر">اطلب الآن</a>
 
 </div>
 
-`;
+<div class="product">
 
-});
+<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f">
 
-</script>
+<h3>مسك ملكي</h3>
+
+<p>مسك مركز فاخر</p>
+
+<div class="price">180 جنيه</div>
+
+<a class="btn" href="https://wa.me/201055880061?text=أريد طلب مسك ملكي">اطلب الآن</a>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+
+<h3>عطر شرقي</h3>
+
+<p>مزيج من العود والمسك</p>
+
+<div class="price">320 جنيه</div>
+
+<a class="btn" href="https://wa.me/201055880061?text=أريد طلب عطر شرقي">اطلب الآن</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<p>📞 01003500353</p>
+
+<p>📱 واتساب 01055880061</p>
+
+<div class="social">
+
+<a href="https://instagram.com/AL_SAEED_TRADING_GROUP">Instagram</a>
+
+</div>
+
+</footer>
 
 </body>
 
