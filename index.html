@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <title>Al-Saeed Trading Group</title>
   <style>
-    body { font-family: 'GE SS Unique', sans-serif; background: #fff; margin:0; }
+    body { font-family: 'GE SS Unique', sans-serif; background: #fff; margin:0; direction: rtl; }
     header { background: linear-gradient(to right, #0a1a3d, #1c2a50); color: gold; padding: 20px; text-align: center; }
     nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
     .hero { background: url('luxury-bg.jpg') no-repeat center; background-size: cover; color: white; text-align: center; padding: 100px 20px; }
     .hero h1 { font-size: 40px; color: gold; }
-    .btn { background: gold; color: #0a1a3d; padding: 10px 20px; border: none; cursor: pointer; font-size: 18px; }
+    .btn { background: gold; color: #0a1a3d; padding: 10px 20px; border: none; cursor: pointer; font-size: 18px; border-radius: 5px; }
     .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
     .product { background: #f9f9f9; border-radius: 10px; padding: 20px; text-align: center; transition: transform 0.3s; }
     .product:hover { transform: scale(1.05); }
@@ -33,25 +33,45 @@
     <button class="btn">تسوق الآن</button>
   </section>
 
-  <section class="products">
-    <div class="product">
-      <img src="stick.jpg" alt="Vegas Stick Collection">
-      <h2>أعواد البخور</h2>
-      <p>أعواد بخور طويلة الأمد برائحة شرقية غنية.</p>
-      <button class="btn">شراء الآن</button>
-    </div>
-    <div class="product">
-      <img src="cubes.jpg" alt="Vegas Cubes">
-      <h2>بخور المكعبات</h2>
-      <p>مكعبات بخور مشبعة بالزيوت العطرية.</p>
-      <button class="btn">شراء الآن</button>
-    </div>
-    <!-- يمكن إضافة باقي المنتجات بنفس النمط -->
-  </section>
+  <section class="products" id="products"></section>
 
   <footer>
     <p>© 2026 Al-Saeed Trading Group | للتواصل: info@alsaeed.com</p>
     <p>تابعنا على إنستغرام: @AL_SAEED_TRADING_GROUP</p>
   </footer>
+
+  <script>
+    // دالة لتحويل CSV إلى مصفوفة كائنات
+    function parseCSV(text) {
+      const rows = text.split("\n").map(r => r.split(","));
+      const headers = rows[0];
+      return rows.slice(1).map(row => {
+        let obj = {};
+        headers.forEach((h, i) => obj[h.trim()] = row[i]?.trim());
+        return obj;
+      });
+    }
+
+    // تحميل ملف CSV وعرض المنتجات
+    fetch("Saeed_Trading_Products_Final.csv")
+      .then(res => res.text())
+      .then(text => {
+        const data = parseCSV(text);
+        const container = document.getElementById("products");
+        data.forEach(item => {
+          if(item["�����"]){ // العمود الأول (اسم المجموعة)
+            const div = document.createElement("div");
+            div.className = "product";
+            div.innerHTML = `
+              <img src="images/${item["����� �������"] || 'default.jpg'}" alt="${item["����� �������"]}">
+              <h2>${item["����� �������"]}</h2>
+              <p>${item["����� ������"]}</p>
+              <button class="btn">شراء الآن</button>
+            `;
+            container.appendChild(div);
+          }
+        });
+      });
+  </script>
 </body>
 </html>
