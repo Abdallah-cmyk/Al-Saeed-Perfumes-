@@ -8,7 +8,7 @@
 
 <title>مجموعة السعيد التجارية</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,7 +16,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Tajawal',sans-serif;
+font-family:'Cairo',sans-serif;
 }
 
 body{
@@ -30,27 +30,29 @@ color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:20px 40px;
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-border-bottom:1px solid rgba(255,215,0,0.3);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:999;
 }
 
 .logo{
-font-size:28px;
+font-size:26px;
 font-weight:900;
 color:#FFD700;
 }
 
 .nav-links{
 display:flex;
-gap:30px;
+gap:25px;
+align-items:center;
 }
 
 .nav-links a{
-color:white;
 text-decoration:none;
-font-weight:500;
+color:white;
 transition:0.3s;
 }
 
@@ -58,57 +60,85 @@ transition:0.3s;
 color:#FFD700;
 }
 
+.cart{
+cursor:pointer;
+position:relative;
+}
+
+.cart-count{
+position:absolute;
+top:-8px;
+left:-10px;
+background:red;
+border-radius:50%;
+font-size:12px;
+padding:3px 7px;
+}
+
 /* HERO */
 
 .hero{
-height:80vh;
+height:70vh;
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 padding:20px;
 }
 
 .hero h1{
-font-size:55px;
+font-size:50px;
 color:#FFD700;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .hero p{
-font-size:20px;
-max-width:700px;
 color:#ccc;
+max-width:600px;
 margin-bottom:30px;
 }
 
 .hero button{
-background:#FFD700;
+padding:14px 35px;
 border:none;
-padding:15px 40px;
+background:#FFD700;
+border-radius:30px;
 font-size:18px;
-border-radius:40px;
 cursor:pointer;
-font-weight:bold;
-transition:0.3s;
 }
 
-.hero button:hover{
-transform:scale(1.05);
-}
+/* SEARCH */
 
-/* SECTIONS */
-
-.section{
-padding:80px 60px;
-}
-
-.section-title{
-font-size:35px;
-margin-bottom:50px;
+.search-box{
 text-align:center;
+margin:40px;
+}
+
+.search-box input{
+width:300px;
+padding:12px;
+border-radius:30px;
+border:none;
+}
+
+/* FILTER */
+
+.filters{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:30px;
+flex-wrap:wrap;
+}
+
+.filter-btn{
+padding:8px 20px;
+border:1px solid #FFD700;
+background:transparent;
 color:#FFD700;
+border-radius:20px;
+cursor:pointer;
 }
 
 /* PRODUCTS */
@@ -116,26 +146,25 @@ color:#FFD700;
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
+gap:30px;
+padding:40px;
 }
 
 .product{
 background:rgba(255,255,255,0.05);
-padding:30px;
-border-radius:20px;
+padding:20px;
+border-radius:15px;
 text-align:center;
-border:1px solid rgba(255,215,0,0.2);
 transition:0.3s;
 }
 
 .product:hover{
 transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(255,215,0,0.2);
 }
 
 .product img{
-width:120px;
-margin-bottom:20px;
+width:100px;
+margin-bottom:15px;
 }
 
 .product h3{
@@ -144,87 +173,61 @@ margin-bottom:10px;
 }
 
 .product p{
-color:#aaa;
 font-size:14px;
-margin-bottom:20px;
+color:#aaa;
+margin-bottom:15px;
 }
 
 .price{
-font-size:22px;
-margin-bottom:20px;
+margin-bottom:15px;
+font-size:18px;
 }
 
 .product button{
-border:2px solid #FFD700;
+padding:8px 20px;
+border:1px solid #FFD700;
 background:transparent;
 color:#FFD700;
-padding:10px 25px;
-border-radius:30px;
+border-radius:20px;
 cursor:pointer;
-transition:0.3s;
 }
 
-.product button:hover{
-background:#FFD700;
-color:#000;
+/* CART PANEL */
+
+.cart-panel{
+position:fixed;
+top:0;
+left:-400px;
+width:350px;
+height:100%;
+background:#111827;
+padding:20px;
+transition:0.4s;
+overflow:auto;
 }
 
-/* FEATURES */
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:40px;
-text-align:center;
+.cart-panel.active{
+left:0;
 }
 
-.feature{
-background:rgba(255,255,255,0.04);
-padding:30px;
-border-radius:15px;
+.cart-item{
+display:flex;
+justify-content:space-between;
+margin-bottom:15px;
 }
 
-.feature h3{
-color:#FFD700;
-margin-bottom:10px;
-}
-
-/* CONTACT */
-
-.contact{
-text-align:center;
-}
-
-.contact p{
-margin:10px 0;
-color:#ccc;
+.cart-total{
+margin-top:20px;
+font-size:20px;
 }
 
 /* FOOTER */
 
 .footer{
-margin-top:60px;
-padding:30px;
 text-align:center;
+padding:30px;
+margin-top:50px;
 background:rgba(255,255,255,0.05);
-border-top:1px solid rgba(255,215,0,0.3);
-}
-
-@media(max-width:768px){
-
-.navbar{
-flex-direction:column;
-gap:15px;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-.section{
-padding:60px 20px;
-}
-
 }
 
 </style>
@@ -243,9 +246,15 @@ padding:60px 20px;
 
 <a href="#">الرئيسية</a>
 <a href="#">المنتجات</a>
-<a href="#">الأكثر مبيعاً</a>
-<a href="#">عن الشركة</a>
 <a href="#">تواصل</a>
+
+<div class="cart" onclick="toggleCart()">
+
+🛒
+
+<span class="cart-count" id="cartCount">0</span>
+
+</div>
 
 </div>
 
@@ -253,143 +262,54 @@ padding:60px 20px;
 
 <!-- HERO -->
 
-<section class="hero">
+<div class="hero">
 
-<h1>مجموعة السعيد التجارية</h1>
+<h1>عطور وبخور فاخرة</h1>
 
-<p>
-أفضل متجر للعطور والبخور الفاخرة في مصر والشرق الأوسط
-</p>
+<p>اكتشف مجموعة فيجاس والعطور العالمية</p>
 
-<button>تصفح المنتجات</button>
+<button onclick="scrollToProducts()">تصفح المنتجات</button>
 
-</section>
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input type="text" id="search" placeholder="ابحث عن عطر..." onkeyup="searchProducts()">
+
+</div>
+
+<!-- FILTER -->
+
+<div class="filters">
+
+<button class="filter-btn" onclick="filter('all')">الكل</button>
+<button class="filter-btn" onclick="filter('perfume')">عطور</button>
+<button class="filter-btn" onclick="filter('incense')">بخور</button>
+<button class="filter-btn" onclick="filter('musk')">مسك</button>
+
+</div>
 
 <!-- PRODUCTS -->
 
-<section class="section">
+<div class="products" id="products"></div>
 
-<h2 class="section-title">المنتجات المميزة</h2>
+<!-- CART -->
 
-<div class="products">
+<div class="cart-panel" id="cartPanel">
 
-<div class="product">
+<h2>سلة المشتريات</h2>
 
-<img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png">
+<div id="cartItems"></div>
 
-<h3>Bleu de Chanel</h3>
+<div class="cart-total">
 
-<p>عطر فرنسي فاخر برائحة خشبية منعشة</p>
-
-<div class="price">1250 جنيه</div>
-
-<button>عرض المنتج</button>
-
-</div>
-
-<div class="product">
-
-<img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png">
-
-<h3>Khamrah Lattafa</h3>
-
-<p>عطر شرقي فاخر من لطافة</p>
-
-<div class="price">650 جنيه</div>
-
-<button>عرض المنتج</button>
-
-</div>
-
-<div class="product">
-
-<img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png">
-
-<h3>Vegas Stick</h3>
-
-<p>أعواد بخور فيجاس الفاخرة</p>
-
-<div class="price">180 جنيه</div>
-
-<button>عرض المنتج</button>
-
-</div>
-
-<div class="product">
-
-<img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png">
-
-<h3>Musk Al Aroosa</h3>
-
-<p>طقم مسك العروسة الفاخر</p>
-
-<div class="price">450 جنيه</div>
-
-<button>عرض المنتج</button>
+الإجمالي: <span id="total">0</span> جنيه
 
 </div>
 
 </div>
-
-</section>
-
-<!-- FEATURES -->
-
-<section class="section">
-
-<h2 class="section-title">لماذا نحن</h2>
-
-<div class="features">
-
-<div class="feature">
-
-<h3>جودة أصلية</h3>
-
-<p>جميع منتجاتنا أصلية 100%</p>
-
-</div>
-
-<div class="feature">
-
-<h3>أسعار منافسة</h3>
-
-<p>أفضل الأسعار في السوق</p>
-
-</div>
-
-<div class="feature">
-
-<h3>شحن سريع</h3>
-
-<p>التوصيل لجميع المحافظات</p>
-
-</div>
-
-<div class="feature">
-
-<h3>دعم العملاء</h3>
-
-<p>خدمة عملاء مميزة</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="section contact">
-
-<h2 class="section-title">تواصل معنا</h2>
-
-<p>القاهرة - مصر</p>
-
-<p>01000000000</p>
-
-<p>info@alsaed-group.com</p>
-
-</section>
 
 <!-- FOOTER -->
 
@@ -398,6 +318,122 @@ padding:60px 20px;
 © 2026 مجموعة السعيد التجارية
 
 </div>
+
+<script>
+
+const products=[
+
+{ id:1,name:"Bleu de Chanel",price:1250,cat:"perfume"},
+
+{ id:2,name:"Khamrah Lattafa",price:650,cat:"perfume"},
+
+{ id:3,name:"Vegas Stick",price:180,cat:"incense"},
+
+{ id:4,name:"Musk Al Aroosa",price:450,cat:"musk"}
+
+];
+
+let cart=[];
+
+function renderProducts(list){
+
+const container=document.getElementById("products");
+
+container.innerHTML="";
+
+list.forEach(p=>{
+
+container.innerHTML+=`
+
+<div class="product">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png">
+
+<h3>${p.name}</h3>
+
+<p>منتج فاخر من متجر السعيد</p>
+
+<div class="price">${p.price} جنيه</div>
+
+<button onclick="addToCart(${p.id})">أضف للسلة</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+renderProducts(products);
+
+function filter(cat){
+
+if(cat==="all")renderProducts(products);
+
+else renderProducts(products.filter(p=>p.cat===cat));
+
+}
+
+function searchProducts(){
+
+let val=document.getElementById("search").value.toLowerCase();
+
+renderProducts(products.filter(p=>p.name.toLowerCase().includes(val)));
+
+}
+
+function addToCart(id){
+
+let product=products.find(p=>p.id===id);
+
+cart.push(product);
+
+updateCart();
+
+}
+
+function updateCart(){
+
+document.getElementById("cartCount").innerText=cart.length;
+
+let html="";
+
+let total=0;
+
+cart.forEach(item=>{
+
+total+=item.price;
+
+html+=`<div class="cart-item">
+
+<span>${item.name}</span>
+
+<span>${item.price}</span>
+
+</div>`;
+
+});
+
+document.getElementById("cartItems").innerHTML=html;
+
+document.getElementById("total").innerText=total;
+
+}
+
+function toggleCart(){
+
+document.getElementById("cartPanel").classList.toggle("active");
+
+}
+
+function scrollToProducts(){
+
+window.scrollTo({top:500,behavior:"smooth"});
+
+}
+
+</script>
 
 </body>
 
