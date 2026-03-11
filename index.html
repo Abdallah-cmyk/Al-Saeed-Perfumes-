@@ -1,77 +1,243 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Al-Saeed Trading Group</title>
-  <style>
-    body { font-family: 'GE SS Unique', sans-serif; background: #fff; margin:0; direction: rtl; }
-    header { background: linear-gradient(to right, #0a1a3d, #1c2a50); color: gold; padding: 20px; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .hero { background: url('luxury-bg.jpg') no-repeat center; background-size: cover; color: white; text-align: center; padding: 100px 20px; }
-    .hero h1 { font-size: 40px; color: gold; }
-    .btn { background: gold; color: #0a1a3d; padding: 10px 20px; border: none; cursor: pointer; font-size: 18px; border-radius: 5px; }
-    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
-    .product { background: #f9f9f9; border-radius: 10px; padding: 20px; text-align: center; transition: transform 0.3s; }
-    .product:hover { transform: scale(1.05); }
-    .product img { width: 100%; border-radius: 10px; }
-    footer { background: #0a1a3d; color: white; text-align: center; padding: 20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجموعة السعيد التجارية - نسخة تجريبية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0f1e, #1a1f2f);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* شريط العنوان */
+        .header {
+            background: rgba(255, 215, 0, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .header h1 {
+            color: #FFD700;
+            font-size: 2.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px #FFD700;
+        }
+
+        .header p {
+            text-align: center;
+            color: #ccc;
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* قائمة الأقسام */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .nav-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            background: #FFD700;
+            color: #0a0f1e;
+            box-shadow: 0 0 20px #FFD700;
+            transform: scale(1.05);
+        }
+
+        /* شبكة المنتجات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* بطاقة المنتج (بتأثير 3D) */
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: 0.3s;
+            transform-style: preserve-3d;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+            border-color: #FFD700;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(145deg, #FFD700, #ff9900);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #0a0f1e;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .product-title {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            color: #aaa;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .product-price span {
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .btn {
+            background: transparent;
+            border: 2px solid #FFD700;
+            color: #FFD700;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background: #FFD700;
+            color: #0a0f1e;
+            box-shadow: 0 0 20px #FFD700;
+        }
+
+        /* تذييل */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        /* للجوال */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .nav-item {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Al-Saeed Trading Group</h1>
-    <nav>
-      <a href="#">الرئيسية</a>
-      <a href="#">المنتجات</a>
-      <a href="#">المعرض</a>
-      <a href="#">التواصل</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>رحلة فاخرة في عالم العطور والبخور</h1>
-    <button class="btn">تسوق الآن</button>
-  </section>
+    <div class="header">
+        <h1>مجموعة السعيد التجارية</h1>
+        <p>AL SAEED TRADING GROUP | فيجاس للعطور والبخور</p>
+    </div>
 
-  <section class="products" id="products"></section>
+    <div class="nav-menu">
+        <div class="nav-item">عطور فرنسية</div>
+        <div class="nav-item">لطافة</div>
+        <div class="nav-item">بخور فيجاس</div>
+        <div class="nav-item">مسك</div>
+        <div class="nav-item">مباخر ذكية</div>
+    </div>
 
-  <footer>
-    <p>© 2026 Al-Saeed Trading Group | للتواصل: info@alsaeed.com</p>
-    <p>تابعنا على إنستغرام: @AL_SAEED_TRADING_GROUP</p>
-  </footer>
+    <div class="products-grid">
+        <!-- بطاقة منتج 1 - شانيل -->
+        <div class="product-card">
+            <div class="product-image">🇫🇷</div>
+            <h3 class="product-title">Bleu de Chanel</h3>
+            <p class="product-desc">بلو دي شانيل - عطر فرنسي أصلي</p>
+            <div class="product-price"><span>جنيه</span> 1,250</div>
+            <button class="btn">عرض المنتج</button>
+        </div>
 
-  <script>
-    // دالة لتحويل CSV إلى مصفوفة كائنات
-    function parseCSV(text) {
-      const rows = text.split("\n").map(r => r.split(","));
-      const headers = rows[0];
-      return rows.slice(1).map(row => {
-        let obj = {};
-        headers.forEach((h, i) => obj[h.trim()] = row[i]?.trim());
-        return obj;
-      });
-    }
+        <!-- بطاقة منتج 2 - لطافة -->
+        <div class="product-card">
+            <div class="product-image">🇦🇪</div>
+            <h3 class="product-title">Khamrah</h3>
+            <p class="product-desc">خمرة - عطر لطافة الفاخر</p>
+            <div class="product-price"><span>جنيه</span> 650</div>
+            <button class="btn">عرض المنتج</button>
+        </div>
 
-    // تحميل ملف CSV وعرض المنتجات
-    fetch("Saeed_Trading_Products_Final.csv")
-      .then(res => res.text())
-      .then(text => {
-        const data = parseCSV(text);
-        const container = document.getElementById("products");
-        data.forEach(item => {
-          if(item["�����"]){ // العمود الأول (اسم المجموعة)
-            const div = document.createElement("div");
-            div.className = "product";
-            div.innerHTML = `
-              <img src="images/${item["����� �������"] || 'default.jpg'}" alt="${item["����� �������"]}">
-              <h2>${item["����� �������"]}</h2>
-              <p>${item["����� ������"]}</p>
-              <button class="btn">شراء الآن</button>
-            `;
-            container.appendChild(div);
-          }
-        });
-      });
-  </script>
+        <!-- بطاقة منتج 3 - بخور فيجاس -->
+        <div class="product-card">
+            <div class="product-image">🌿</div>
+            <h3 class="product-title">Vegas Stick</h3>
+            <p class="product-desc">أعواد البخور الفاخرة - عود السديم</p>
+            <div class="product-price"><span>جنيه</span> 180</div>
+            <button class="btn">عرض المنتج</button>
+        </div>
+
+        <!-- بطاقة منتج 4 - مسك العروسة -->
+        <div class="product-card">
+            <div class="product-image">🌸</div>
+            <h3 class="product-title">Musk Al-Aroosa</h3>
+            <p class="product-desc">طقم مسك العروسة 3×30 مل</p>
+            <div class="product-price"><span>جنيه</span> 450</div>
+            <button class="btn">عرض المنتج</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 مجموعة السعيد التجارية - جميع الحقوق محفوظة
+    </div>
+
 </body>
 </html>
