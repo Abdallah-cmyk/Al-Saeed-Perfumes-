@@ -33,9 +33,6 @@ align-items:center;
 padding:20px 40px;
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-z-index:999;
 }
 
 .logo{
@@ -44,126 +41,54 @@ font-weight:900;
 color:#FFD700;
 }
 
-.nav-links{
-display:flex;
-gap:25px;
-align-items:center;
-}
-
-.nav-links a{
-text-decoration:none;
-color:white;
-transition:0.3s;
-}
-
-.nav-links a:hover{
-color:#FFD700;
-}
-
 .cart{
 cursor:pointer;
-position:relative;
-}
-
-.cart-count{
-position:absolute;
-top:-8px;
-left:-10px;
-background:red;
-border-radius:50%;
-font-size:12px;
-padding:3px 7px;
+font-size:20px;
 }
 
 /* HERO */
 
 .hero{
-height:70vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
 text-align:center;
-padding:20px;
+padding:80px 20px;
 }
 
 .hero h1{
 font-size:50px;
 color:#FFD700;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
 .hero p{
 color:#ccc;
-max-width:600px;
-margin-bottom:30px;
-}
-
-.hero button{
-padding:14px 35px;
-border:none;
-background:#FFD700;
-border-radius:30px;
-font-size:18px;
-cursor:pointer;
-}
-
-/* SEARCH */
-
-.search-box{
-text-align:center;
-margin:40px;
-}
-
-.search-box input{
-width:300px;
-padding:12px;
-border-radius:30px;
-border:none;
-}
-
-/* FILTER */
-
-.filters{
-display:flex;
-justify-content:center;
-gap:15px;
-margin-bottom:30px;
-flex-wrap:wrap;
-}
-
-.filter-btn{
-padding:8px 20px;
-border:1px solid #FFD700;
-background:transparent;
-color:#FFD700;
-border-radius:20px;
-cursor:pointer;
 }
 
 /* PRODUCTS */
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
-padding:40px;
+padding:50px;
 }
 
 .product{
 background:rgba(255,255,255,0.05);
-padding:20px;
+padding:25px;
 border-radius:15px;
 text-align:center;
-transition:0.3s;
+transition:.3s;
 }
 
 .product:hover{
 transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(255,215,0,0.2);
 }
 
 .product img{
-width:100px;
+width:140px;
+height:180px;
+object-fit:contain;
 margin-bottom:15px;
 }
 
@@ -175,15 +100,15 @@ margin-bottom:10px;
 .product p{
 font-size:14px;
 color:#aaa;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
 .price{
+font-size:20px;
 margin-bottom:15px;
-font-size:18px;
 }
 
-.product button{
+button{
 padding:8px 20px;
 border:1px solid #FFD700;
 background:transparent;
@@ -192,33 +117,9 @@ border-radius:20px;
 cursor:pointer;
 }
 
-/* CART PANEL */
-
-.cart-panel{
-position:fixed;
-top:0;
-left:-400px;
-width:350px;
-height:100%;
-background:#111827;
-padding:20px;
-transition:0.4s;
-overflow:auto;
-}
-
-.cart-panel.active{
-left:0;
-}
-
-.cart-item{
-display:flex;
-justify-content:space-between;
-margin-bottom:15px;
-}
-
-.cart-total{
-margin-top:20px;
-font-size:20px;
+button:hover{
+background:#FFD700;
+color:black;
 }
 
 /* FOOTER */
@@ -226,7 +127,6 @@ font-size:20px;
 .footer{
 text-align:center;
 padding:30px;
-margin-top:50px;
 background:rgba(255,255,255,0.05);
 }
 
@@ -236,86 +136,27 @@ background:rgba(255,255,255,0.05);
 
 <body>
 
-<!-- NAVBAR -->
-
 <div class="navbar">
 
-<div class="logo">السعيد</div>
+<div class="logo">AL SAEED</div>
 
-<div class="nav-links">
-
-<a href="#">الرئيسية</a>
-<a href="#">المنتجات</a>
-<a href="#">تواصل</a>
-
-<div class="cart" onclick="toggleCart()">
-
-🛒
-
-<span class="cart-count" id="cartCount">0</span>
+<div class="cart">🛒</div>
 
 </div>
-
-</div>
-
-</div>
-
-<!-- HERO -->
 
 <div class="hero">
 
-<h1>عطور وبخور فاخرة</h1>
+<h1>مجموعة السعيد التجارية</h1>
 
-<p>اكتشف مجموعة فيجاس والعطور العالمية</p>
-
-<button onclick="scrollToProducts()">تصفح المنتجات</button>
+<p>عطور – بخور – مسك – مباخر فاخرة</p>
 
 </div>
-
-<!-- SEARCH -->
-
-<div class="search-box">
-
-<input type="text" id="search" placeholder="ابحث عن عطر..." onkeyup="searchProducts()">
-
-</div>
-
-<!-- FILTER -->
-
-<div class="filters">
-
-<button class="filter-btn" onclick="filter('all')">الكل</button>
-<button class="filter-btn" onclick="filter('perfume')">عطور</button>
-<button class="filter-btn" onclick="filter('incense')">بخور</button>
-<button class="filter-btn" onclick="filter('musk')">مسك</button>
-
-</div>
-
-<!-- PRODUCTS -->
 
 <div class="products" id="products"></div>
 
-<!-- CART -->
-
-<div class="cart-panel" id="cartPanel">
-
-<h2>سلة المشتريات</h2>
-
-<div id="cartItems"></div>
-
-<div class="cart-total">
-
-الإجمالي: <span id="total">0</span> جنيه
-
-</div>
-
-</div>
-
-<!-- FOOTER -->
-
 <div class="footer">
 
-© 2026 مجموعة السعيد التجارية
+© 2026 AL SAEED TRADING GROUP
 
 </div>
 
@@ -323,115 +164,94 @@ background:rgba(255,255,255,0.05);
 
 const products=[
 
-{ id:1,name:"Bleu de Chanel",price:1250,cat:"perfume"},
+{
+name:"Vegas Stick Collection",
+price:220,
+img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
+desc:"أعواد بخور فاخرة تحتوي على: عود السديم، روعة المسك، أصيل الطيب، عود جودي، أميرة غرامي، الأرجوان."
+},
 
-{ id:2,name:"Khamrah Lattafa",price:650,cat:"perfume"},
+{
+name:"Vegas Cubes",
+price:240,
+img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
+desc:"مكعبات بخور مضغوطة بروائح Vegas Discovery و Vegas Secret و Vegas Code."
+},
 
-{ id:3,name:"Vegas Stick",price:180,cat:"incense"},
+{
+name:"Vegas Bullet Collection",
+price:210,
+img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
+desc:"بخور مركز يحتوي: عود منسية، صقر عماني، سراب، لبان، شيراز، عود السيوف."
+},
 
-{ id:4,name:"Musk Al Aroosa",price:450,cat:"musk"}
+{
+name:"Chocolate Incense",
+price:230,
+img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
+desc:"بخور مبتكر على شكل شوكولاتة بروائح روعة الشرق وعود مذهل."
+},
+
+{
+name:"Land of the Nile Collection",
+price:260,
+img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
+desc:"مجموعة مستوحاة من المدن المصرية: سيوة، الجيزة، الأقصر، أسوان، الإسكندرية."
+},
+
+{
+name:"Pharaonic Collection",
+price:270,
+img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
+desc:"بخور فاخر بروائح نفرتيتي وتوت عنخ آمون وكليوباترا."
+},
+
+{
+name:"Musk Al Aroosa Set",
+price:450,
+img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
+desc:"طقم مسك العروسة يحتوي ثلاث زجاجات مسك مركز 30 مل."
+},
+
+{
+name:"Body Splash Collection",
+price:120,
+img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
+desc:"معطرات جسم بروائح 212 Sexy و Good Girls و Coco Mademoiselle."
+},
+
+{
+name:"Backflow Incense Burner",
+price:350,
+img:"https://cdn-icons-png.flaticon.com/512/2936/2936886.png",
+desc:"مبخرة حديثة بتقنية التدفق العكسي للدخان."
+}
 
 ];
 
-let cart=[];
-
-function renderProducts(list){
-
 const container=document.getElementById("products");
 
-container.innerHTML="";
-
-list.forEach(p=>{
+products.forEach(p=>{
 
 container.innerHTML+=`
 
 <div class="product">
 
-<img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png">
+<img src="${p.img}">
 
 <h3>${p.name}</h3>
 
-<p>منتج فاخر من متجر السعيد</p>
+<p>${p.desc}</p>
 
 <div class="price">${p.price} جنيه</div>
 
-<button onclick="addToCart(${p.id})">أضف للسلة</button>
+<button>أضف للسلة</button>
 
 </div>
 
 `;
 
 });
-
-}
-
-renderProducts(products);
-
-function filter(cat){
-
-if(cat==="all")renderProducts(products);
-
-else renderProducts(products.filter(p=>p.cat===cat));
-
-}
-
-function searchProducts(){
-
-let val=document.getElementById("search").value.toLowerCase();
-
-renderProducts(products.filter(p=>p.name.toLowerCase().includes(val)));
-
-}
-
-function addToCart(id){
-
-let product=products.find(p=>p.id===id);
-
-cart.push(product);
-
-updateCart();
-
-}
-
-function updateCart(){
-
-document.getElementById("cartCount").innerText=cart.length;
-
-let html="";
-
-let total=0;
-
-cart.forEach(item=>{
-
-total+=item.price;
-
-html+=`<div class="cart-item">
-
-<span>${item.name}</span>
-
-<span>${item.price}</span>
-
-</div>`;
-
-});
-
-document.getElementById("cartItems").innerHTML=html;
-
-document.getElementById("total").innerText=total;
-
-}
-
-function toggleCart(){
-
-document.getElementById("cartPanel").classList.toggle("active");
-
-}
-
-function scrollToProducts(){
-
-window.scrollTo({top:500,behavior:"smooth"});
-
-}
 
 </script>
 
