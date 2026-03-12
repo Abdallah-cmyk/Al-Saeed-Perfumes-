@@ -1,58 +1,80 @@
 const products = {
 
 bakhoor: [
-
 {
+id:"n1",
 name:"بخور نفرتيتي",
 price:"250 جنيه",
-image:"images/nefertiti.jpg",
-id:"nefertiti"
+img:"https://via.placeholder.com/200x200.png?text=بخور+نفرتيتي"
 },
-
 {
+id:"n2",
 name:"بخور كليوباترا",
 price:"260 جنيه",
-image:"images/cleo.jpg",
-id:"cleo"
+img:"https://via.placeholder.com/200x200.png?text=بخور+كليوباترا"
 }
-
 ],
 
-oud: [
-
+perfume: [
 {
+id:"p1",
 name:"عطر عود ملكي",
 price:"450 جنيه",
-image:"images/oud1.jpg",
-id:"oud1"
+img:"https://via.placeholder.com/200x200.png?text=عطر+عود+ملكي"
 },
-
 {
+id:"p2",
 name:"عطر مسك فاخر",
 price:"420 جنيه",
-image:"images/musk.jpg",
-id:"musk"
+img:"https://via.placeholder.com/200x200.png?text=عطر+مسك+فاخر"
 }
+],
 
+incense: [
+{
+id:"i1",
+name:"عود السديم",
+price:"180 جنيه",
+img:"https://via.placeholder.com/200x200.png?text=عود+السديم"
+},
+{
+id:"i2",
+name:"عود جودي",
+price:"200 جنيه",
+img:"https://via.placeholder.com/200x200.png?text=عود+جودي"
+}
+],
+
+body: [
+{
+id:"b1",
+name:"معطر 212 Sexy",
+price:"150 جنيه",
+img:"https://via.placeholder.com/200x200.png?text=212+Sexy"
+},
+{
+id:"b2",
+name:"معطر Pink Blossom",
+price:"160 جنيه",
+img:"https://via.placeholder.com/200x200.png?text=Pink+Blossom"
+}
 ]
 
-}
+};
 
 const params = new URLSearchParams(window.location.search)
-const cat = params.get("cat")
-
+const cat = params.get("cat")  // هذا هو الضابط
 const container = document.getElementById("products")
 
 if(products[cat]){
-
-products[cat].forEach(p=>{
-
-container.innerHTML += `
-
-<div class="card"><img src="${p.image}"><h3>${p.name}</h3><p>${p.price}</p><a href="product.html?id=${p.id}">عرض المنتج</a>
-
-</div>`
-
-})
-
+  products[cat].forEach(p=>{
+    container.innerHTML+=`
+      <div class="card">
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>${p.price}</p>
+        <a class="btn" href="product.html?id=${p.id}">عرض المنتج</a>
+      </div>
+    `
+  })
 }
