@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>مجموعة السعيد للعطور والبخور</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-<style>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>مجموعة السعيد للعطور والبخور</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><style>
 
 body{
 margin:0;
+font-family:Cairo;
 background:#000;
 color:white;
-font-family:'Cairo',sans-serif;
 }
 
 header{
@@ -48,44 +36,37 @@ background:linear-gradient(#000,#111);
 }
 
 .hero h1{
-font-size:38px;
 color:#d4af37;
+font-size:40px;
 }
 
 .section{
-padding:70px 40px;
+padding:60px 40px;
 }
 
 .section h2{
 text-align:center;
 color:#d4af37;
-margin-bottom:40px;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:30px;
+margin-top:40px;
 }
 
-.product{
+.card{
 background:#0a0a0a;
-padding:20px;
-border-radius:14px;
 border:1px solid #222;
-transition:.3s;
+padding:20px;
+border-radius:12px;
 }
 
-.product:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 25px rgba(212,175,55,.3);
-}
-
-.product img{
+.card img{
 width:100%;
 height:200px;
 object-fit:cover;
-border-radius:8px;
 }
 
 .price{
@@ -101,184 +82,161 @@ padding:10px 18px;
 border-radius:20px;
 text-decoration:none;
 display:inline-block;
+cursor:pointer;
+}
+
+.search{
+width:100%;
+padding:12px;
+margin-top:20px;
+border:none;
+border-radius:6px;
 }
 
 #viewer3d{
 height:400px;
+margin-top:40px;
+}
+
+.cart{
+position:fixed;
+left:20px;
+bottom:20px;
+background:#111;
+padding:15px;
+border-radius:10px;
+border:1px solid #333;
 }
 
 footer{
+background:#0a0a0a;
 text-align:center;
 padding:40px;
-background:#0a0a0a;
 }
 
-</style>
-
-</head>
-
-
-<body>
-
-<header>
-
-<div class="logo">مجموعة السعيد</div>
-
-<nav>
-
-<a href="#">الرئيسية</a>
+</style></head><body><header><div class="logo">مجموعة السعيد</div><nav><a href="#">الرئيسية</a>
 <a href="#products">المنتجات</a>
-<a href="#3d">عرض 3D</a>
-<a href="#contact">اتصل بنا</a>
+<a href="#viewer3d">عرض 3D</a>
 
-</nav>
+</nav></header><section class="hero"><h1>عالم العطور والبخور الفاخر</h1></section><section class="section" id="products"><h2>المنتجات</h2><input class="search" placeholder="ابحث عن منتج..." onkeyup="searchProducts(this.value)"><div class="products" id="productsContainer"></div></section><section class="section"><h2>عرض ثلاثي الأبعاد</h2><div id="viewer3d"></div></section><div class="cart">🛒 السلة:
+<span id="cartCount">0</span>
 
-</header>
+</div><footer><p>📞 الهاتف: 01003500353</p>
+<p>📱 واتساب: 01055880061</p></footer><script>
 
+let cart = 0
 
-<section class="hero">
+const products=[
 
-<h1>عالم العطور والبخور الفاخر</h1>
+{name:"مجموعة أعواد البخور",price:220,img:"https://images.unsplash.com/photo-1615634260167-c8cdede054de"},
 
-</section>
+{name:"المجموعة الفرعونية",price:260,img:"https://images.unsplash.com/photo-1594035910387-fea47794261f"},
 
+{name:"مجموعة أرض النيل",price:270,img:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539"},
 
-<section class="section" id="products">
+{name:"عطر مسك ملكي",price:450,img:"https://images.unsplash.com/photo-1595425970377-c9703cf48b6d"},
 
-<h2>منتجات البخور</h2>
+{name:"عطر عود عربي",price:520,img:"https://images.unsplash.com/photo-1619994403073-2cec1c5f2d7c"}
 
-<div class="products">
+]
 
-<div class="product">
+function render(list){
 
-<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
+const container=document.getElementById("productsContainer")
 
-<h3>مجموعة أعواد البخور</h3>
+container.innerHTML=""
 
-<p>عود السديم – روعة المسك – أصيل الطيب – عود جودي</p>
+list.forEach(p=>{
 
-<div class="price">220 جنيه</div>
+container.innerHTML+=`
 
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب مجموعة أعواد البخور">اطلب</a>
+<div class="card">
 
-</div>
+<img src="${p.img}">
 
+<h3>${p.name}</h3>
 
-<div class="product">
+<div class="price">${p.price} جنيه</div>
 
-<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f">
+<button class="btn" onclick="addCart()">أضف للسلة</button>
 
-<h3>المجموعة الفرعونية</h3>
-
-<p>نفرتيتي – توت عنخ آمون – عين حورس – كليوباترا</p>
-
-<div class="price">260 جنيه</div>
-
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب المجموعة الفرعونية">اطلب</a>
-
-</div>
-
-
-<div class="product">
-
-<img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539">
-
-<h3>مجموعة أرض النيل</h3>
-
-<p>Siwa – Giza – Luxor – Aswan – Alexandria</p>
-
-<div class="price">270 جنيه</div>
-
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب مجموعة أرض النيل">اطلب</a>
+<a class="btn"
+href="https://wa.me/201055880061?text=أريد طلب ${p.name}">
+واتساب
+</a>
 
 </div>
 
-</div>
+`
 
-</section>
+})
 
+}
 
-<section class="section" id="3d">
+render(products)
 
-<h2>عرض المنتج ثلاثي الأبعاد</h2>
+function searchProducts(q){
 
-<div id="viewer3d"></div>
+const filtered=products.filter(p=>p.name.includes(q))
 
-</section>
+render(filtered)
 
+}
 
-<section class="section" id="contact">
+function addCart(){
 
-<h2>اتصل بنا</h2>
+cart++
 
-<p>📞 الهاتف: 01003500353</p>
-<p>📱 واتساب: 01055880061</p>
-<p>Instagram: AL_SAEED_TRADING_GROUP</p>
+document.getElementById("cartCount").innerText=cart
 
-</section>
+}
 
+/* 3D */
 
-<footer>
+const scene=new THREE.Scene()
 
-<p>© جميع الحقوق محفوظة لمجموعة السعيد</p>
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/400,0.1,1000)
 
-</footer>
+const renderer=new THREE.WebGLRenderer()
 
+renderer.setSize(window.innerWidth,400)
 
-<script>
+document.getElementById("viewer3d").appendChild(renderer.domElement)
 
-const scene = new THREE.Scene();
+const geometry=new THREE.CylinderGeometry(1,1,3,32)
 
-const camera = new THREE.PerspectiveCamera(
-75,
-window.innerWidth / 400,
-0.1,
-1000
-);
+const material=new THREE.MeshStandardMaterial({
 
-const renderer = new THREE.WebGLRenderer();
-
-renderer.setSize(window.innerWidth,400);
-
-document.getElementById("viewer3d").appendChild(renderer.domElement);
-
-
-const geometry = new THREE.CylinderGeometry(1,1,3,32);
-
-const material = new THREE.MeshStandardMaterial({
 color:0xd4af37,
+
 metalness:1,
-roughness:.3
-});
 
-const cylinder = new THREE.Mesh(geometry,material);
+roughness:0.2
 
-scene.add(cylinder);
+})
 
+const bottle=new THREE.Mesh(geometry,material)
 
-const light = new THREE.PointLight(0xffffff,1);
+scene.add(bottle)
 
-light.position.set(5,5,5);
+const light=new THREE.PointLight(0xffffff,1)
 
-scene.add(light);
+light.position.set(5,5,5)
 
-camera.position.z = 5;
+scene.add(light)
 
+camera.position.z=5
 
 function animate(){
 
-requestAnimationFrame(animate);
+requestAnimationFrame(animate)
 
-cylinder.rotation.y += 0.01;
+bottle.rotation.y+=0.01
 
-renderer.render(scene,camera);
+renderer.render(scene,camera)
 
 }
 
-animate();
+animate()
 
-</script>
-
-
-</body>
-</html>
+</script></body></html>
