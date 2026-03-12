@@ -1,66 +1,59 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مجموعة السعيد</title>
+<title>مجموعة السعيد للعطور والبخور</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <style>
 
 body{
 margin:0;
-font-family:'Cairo',sans-serif;
 background:#000;
 color:white;
+font-family:'Cairo',sans-serif;
 }
 
 header{
 display:flex;
 justify-content:space-between;
 padding:20px 40px;
-border-bottom:1px solid #333;
+border-bottom:1px solid #222;
 }
 
 .logo{
-font-size:26px;
-font-weight:900;
 color:#d4af37;
+font-weight:900;
+font-size:26px;
 }
 
 nav a{
-margin:0 10px;
-text-decoration:none;
 color:white;
+margin:10px;
+text-decoration:none;
 }
 
 .hero{
-height:500px;
+height:420px;
 display:flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
-}
-
-#three-container{
-width:100%;
-height:300px;
+background:linear-gradient(#000,#111);
 }
 
 .hero h1{
-color:#d4af37;
 font-size:38px;
-margin-top:20px;
+color:#d4af37;
 }
 
 .section{
-padding:60px 40px;
+padding:70px 40px;
 }
 
 .section h2{
@@ -76,18 +69,23 @@ gap:30px;
 }
 
 .product{
-background:#0b0b0b;
+background:#0a0a0a;
 padding:20px;
-border-radius:10px;
+border-radius:14px;
 border:1px solid #222;
-text-align:center;
+transition:.3s;
+}
+
+.product:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(212,175,55,.3);
 }
 
 .product img{
 width:100%;
 height:200px;
 object-fit:cover;
-border-radius:6px;
+border-radius:8px;
 }
 
 .price{
@@ -99,21 +97,26 @@ margin:10px 0;
 .btn{
 background:#d4af37;
 color:black;
-padding:10px 20px;
+padding:10px 18px;
 border-radius:20px;
 text-decoration:none;
+display:inline-block;
+}
+
+#viewer3d{
+height:400px;
 }
 
 footer{
+text-align:center;
 padding:40px;
 background:#0a0a0a;
-text-align:center;
-border-top:1px solid #222;
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -122,10 +125,12 @@ border-top:1px solid #222;
 <div class="logo">مجموعة السعيد</div>
 
 <nav>
+
 <a href="#">الرئيسية</a>
-<a href="#incense">البخور</a>
-<a href="#perfume">العطور</a>
-<a href="#musk">المسك</a>
+<a href="#products">المنتجات</a>
+<a href="#3d">عرض 3D</a>
+<a href="#contact">اتصل بنا</a>
+
 </nav>
 
 </header>
@@ -133,103 +138,89 @@ border-top:1px solid #222;
 
 <section class="hero">
 
-<div id="three-container"></div>
-
-<h1>عالم البخور والعطور الفاخرة</h1>
+<h1>عالم العطور والبخور الفاخر</h1>
 
 </section>
 
 
-<section class="section" id="incense">
+<section class="section" id="products">
 
-<h2>البخور</h2>
+<h2>منتجات البخور</h2>
 
 <div class="products">
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f">
-<h3>مجموعة أرض النيل</h3>
-<p>Siwa - Giza - Luxor - Aswan - Alexandria</p>
-<div class="price">260 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=طلب مجموعة أرض النيل">اطلب</a>
-</div>
 
-<div class="product">
 <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
-<h3>المجموعة الفرعونية</h3>
-<p>نفرتيتي - كليوباترا - توت عنخ آمون</p>
-<div class="price">270 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=طلب المجموعة الفرعونية">اطلب</a>
+
+<h3>مجموعة أعواد البخور</h3>
+
+<p>عود السديم – روعة المسك – أصيل الطيب – عود جودي</p>
+
+<div class="price">220 جنيه</div>
+
+<a class="btn" href="https://wa.me/201055880061?text=أريد طلب مجموعة أعواد البخور">اطلب</a>
+
 </div>
+
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539">
-<h3>بخور مكعبات</h3>
-<p>Discovery - Secret - Code</p>
-<div class="price">240 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=طلب بخور مكعبات">اطلب</a>
-</div>
 
-</div>
-
-</section>
-
-
-<section class="section" id="perfume">
-
-<h2>العطور</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1541643600914-78b084683601">
-<h3>عطر ملكي</h3>
-<p>عطر شرقي فاخر بثبات طويل</p>
-<div class="price">650 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=طلب عطر ملكي">اطلب</a>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f">
-<h3>عطر مسك</h3>
-<p>مزيج فاخر من المسك والعنبر</p>
-<div class="price">620 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=طلب عطر مسك">اطلب</a>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section" id="musk">
-
-<h2>المسك</h2>
-
-<div class="products">
-
-<div class="product">
 <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f">
-<h3>مسك العروسة</h3>
-<p>مسك فاخر بروائح ناعمة</p>
-<div class="price">450 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=طلب مسك العروسة">اطلب</a>
+
+<h3>المجموعة الفرعونية</h3>
+
+<p>نفرتيتي – توت عنخ آمون – عين حورس – كليوباترا</p>
+
+<div class="price">260 جنيه</div>
+
+<a class="btn" href="https://wa.me/201055880061?text=أريد طلب المجموعة الفرعونية">اطلب</a>
+
+</div>
+
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539">
+
+<h3>مجموعة أرض النيل</h3>
+
+<p>Siwa – Giza – Luxor – Aswan – Alexandria</p>
+
+<div class="price">270 جنيه</div>
+
+<a class="btn" href="https://wa.me/201055880061?text=أريد طلب مجموعة أرض النيل">اطلب</a>
+
 </div>
 
 </div>
+
+</section>
+
+
+<section class="section" id="3d">
+
+<h2>عرض المنتج ثلاثي الأبعاد</h2>
+
+<div id="viewer3d"></div>
+
+</section>
+
+
+<section class="section" id="contact">
+
+<h2>اتصل بنا</h2>
+
+<p>📞 الهاتف: 01003500353</p>
+<p>📱 واتساب: 01055880061</p>
+<p>Instagram: AL_SAEED_TRADING_GROUP</p>
 
 </section>
 
 
 <footer>
 
-<p>مجموعة السعيد للتجارة والاستثمار</p>
-
-<p>الهاتف: 01003500353</p>
-
-<p>واتساب: 01055880061</p>
-
-<p>Instagram: AL_SAEED_TRADING_GROUP</p>
+<p>© جميع الحقوق محفوظة لمجموعة السعيد</p>
 
 </footer>
 
@@ -238,21 +229,32 @@ border-top:1px solid #222;
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75,window.innerWidth/300,0.1,1000);
+const camera = new THREE.PerspectiveCamera(
+75,
+window.innerWidth / 400,
+0.1,
+1000
+);
 
-const renderer = new THREE.WebGLRenderer({alpha:true});
+const renderer = new THREE.WebGLRenderer();
 
-renderer.setSize(window.innerWidth,300);
+renderer.setSize(window.innerWidth,400);
 
-document.getElementById("three-container").appendChild(renderer.domElement);
+document.getElementById("viewer3d").appendChild(renderer.domElement);
+
 
 const geometry = new THREE.CylinderGeometry(1,1,3,32);
 
-const material = new THREE.MeshStandardMaterial({color:0xd4af37});
+const material = new THREE.MeshStandardMaterial({
+color:0xd4af37,
+metalness:1,
+roughness:.3
+});
 
-const bottle = new THREE.Mesh(geometry,material);
+const cylinder = new THREE.Mesh(geometry,material);
 
-scene.add(bottle);
+scene.add(cylinder);
+
 
 const light = new THREE.PointLight(0xffffff,1);
 
@@ -262,11 +264,12 @@ scene.add(light);
 
 camera.position.z = 5;
 
+
 function animate(){
 
 requestAnimationFrame(animate);
 
-bottle.rotation.y += 0.01;
+cylinder.rotation.y += 0.01;
 
 renderer.render(scene,camera);
 
@@ -275,6 +278,7 @@ renderer.render(scene,camera);
 animate();
 
 </script>
+
 
 </body>
 </html>
