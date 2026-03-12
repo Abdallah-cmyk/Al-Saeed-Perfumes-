@@ -1,181 +1,21 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>مجموعة السعيد للعطور والبخور</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>مجموعة السعيد للعطور والبخور</title><link rel="stylesheet" href="style.css"></head><body><header><h1>مجموعة السعيد</h1><nav><a href="index.html">الرئيسية</a>
+<a href="#categories">الأقسام</a>
 
-*{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Cairo;
-background:#000;
-color:white;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 25px;
-background:#0a0a0a;
-}
-
-.logo{
-color:#d4af37;
-font-size:22px;
-font-weight:bold;
-}
-
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-}
-
-.hero{
-text-align:center;
-padding:80px 20px;
-background:#111;
-}
-
-.hero h1{
-color:#d4af37;
-}
-
-.section{
-padding:40px 20px;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:#111;
-padding:15px;
-border-radius:8px;
-border:1px solid #222;
-text-align:center;
-}
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:6px;
-}
-
-.price{
-color:#d4af37;
-margin:10px 0;
-}
-
-.btn{
-background:#d4af37;
-color:black;
-padding:8px 14px;
-border-radius:20px;
-text-decoration:none;
-display:inline-block;
-margin-top:5px;
-}
-
-.search{
-width:100%;
-max-width:400px;
-display:block;
-margin:20px auto;
-padding:10px;
-border-radius:6px;
-border:none;
-}
-
-footer{
-text-align:center;
-padding:30px;
-background:#0a0a0a;
-margin-top:40px;
-}
-
-</style></head><body><header><div class="logo">مجموعة السعيد</div><nav><a href="#">الرئيسية</a>
-<a href="#products">المنتجات</a>
-
-</nav></header><section class="hero"><h1>عالم العطور والبخور الفاخر</h1><p>أفضل أنواع البخور والعطور الشرقية</p></section><section class="section" id="products"><h2 style="text-align:center;color:#d4af37">المنتجات</h2><input class="search" placeholder="ابحث عن منتج..." onkeyup="searchProduct(this.value)"><div class="products" id="productList"></div></section><footer><p>📞 الهاتف: 01003500353</p><p>📱 واتساب: 01055880061</p></footer><script>
-
-const products=[
-
-{
-name:"مجموعة أعواد البخور",
-price:"220 جنيه",
-img:"https://images.unsplash.com/photo-1615634260167-c8cdede054de"
-},
-
-{
-name:"المجموعة الفرعونية",
-price:"260 جنيه",
-img:"https://images.unsplash.com/photo-1594035910387-fea47794261f"
-},
-
-{
-name:"مجموعة أرض النيل",
-price:"270 جنيه",
-img:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539"
-},
-
-{
-name:"عطر مسك ملكي",
-price:"450 جنيه",
-img:"https://images.unsplash.com/photo-1595425970377-c9703cf48b6d"
-},
-
-{
-name:"عطر عود عربي",
-price:"520 جنيه",
-img:"https://images.unsplash.com/photo-1619994403073-2cec1c5f2d7c"
-}
-
-]
-
-function render(list){
-
-const container=document.getElementById("productList")
-
-container.innerHTML=""
-
-list.forEach(p=>{
-
-container.innerHTML+=`
-
-<div class="card">
-
-<img src="${p.img}">
-
-<h3>${p.name}</h3>
-
-<div class="price">${p.price}</div>
-
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب ${p.name}">
-
-اطلب عبر واتساب
-
-</a>
-
-</div>
-
-`
-
-})
-
-}
-
-render(products)
-
-function searchProduct(q){
-
-const filtered=products.filter(p=>p.name.includes(q))
-
-render(filtered)
-
-}
-
-</script></body></html>
+</nav></header><section class="hero"><h2>عالم العطور والبخور الفاخر</h2>
+<p>أفضل منتجات العطور والبخور الشرقية</p></section><section id="categories"><h2>الأقسام</h2><div class="categories"><a href="products.html?cat=bakhoor" class="cat">
+<img src="images/bakhoor.jpg">
+<h3>البخور</h3>
+</a><a href="products.html?cat=oud" class="cat">
+<img src="images/oud.jpg">
+<h3>العطور</h3>
+</a><a href="products.html?cat=bodymist" class="cat">
+<img src="images/body.jpg">
+<h3>معطرات الجسم</h3>
+</a><a href="products.html?cat=incense" class="cat">
+<img src="images/incense.jpg">
+<h3>أعواد البخور</h3>
+</a></div></section><footer><p>📞 01003500353</p>
+<p>📱 واتساب 01055880061</p></footer></body>
+</html>
