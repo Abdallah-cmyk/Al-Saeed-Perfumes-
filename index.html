@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مجموعة السعيد للتجارة والاستثمار</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;900&display=swap" rel="stylesheet">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>مجموعة السعيد</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
 
 <style>
 
@@ -19,7 +24,6 @@ color:white;
 header{
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:20px 40px;
 border-bottom:1px solid #333;
 }
@@ -31,24 +35,28 @@ color:#d4af37;
 }
 
 nav a{
-color:white;
-margin:0 12px;
+margin:0 10px;
 text-decoration:none;
+color:white;
 }
 
 .hero{
-height:420px;
-background:url("https://images.unsplash.com/photo-1594035910387-fea47794261f") center/cover;
+height:500px;
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:center;
 }
 
+#three-container{
+width:100%;
+height:300px;
+}
+
 .hero h1{
-background:rgba(0,0,0,.6);
-padding:25px 40px;
-border:1px solid #d4af37;
-font-size:36px;
+color:#d4af37;
+font-size:38px;
+margin-top:20px;
 }
 
 .section{
@@ -63,15 +71,15 @@ margin-bottom:40px;
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 }
 
 .product{
-background:#0a0a0a;
-border:1px solid #222;
+background:#0b0b0b;
 padding:20px;
-border-radius:12px;
+border-radius:10px;
+border:1px solid #222;
 text-align:center;
 }
 
@@ -92,19 +100,19 @@ margin:10px 0;
 background:#d4af37;
 color:black;
 padding:10px 20px;
-border-radius:25px;
+border-radius:20px;
 text-decoration:none;
-display:inline-block;
 }
 
 footer{
+padding:40px;
 background:#0a0a0a;
 text-align:center;
-padding:40px;
 border-top:1px solid #222;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -116,65 +124,50 @@ border-top:1px solid #222;
 <nav>
 <a href="#">الرئيسية</a>
 <a href="#incense">البخور</a>
+<a href="#perfume">العطور</a>
 <a href="#musk">المسك</a>
-<a href="#body">معطرات الجسم</a>
-<a href="#burner">المباخر</a>
 </nav>
 
 </header>
 
 
 <section class="hero">
-<h1>عالم البخور والعطور الشرقية الفاخرة</h1>
+
+<div id="three-container"></div>
+
+<h1>عالم البخور والعطور الفاخرة</h1>
+
 </section>
 
 
-<!-- البخور -->
-
 <section class="section" id="incense">
 
-<h2>مجموعات البخور</h2>
+<h2>البخور</h2>
 
 <div class="products">
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
-<h3>مجموعة أعواد البخور</h3>
-<p>تشمل: عود السديم، روعة المسك، أصيل الطيب، عود جودي، أميرة غرامي، الأرجوان.</p>
-<div class="price">220 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب مجموعة أعواد البخور">اطلب</a>
+<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f">
+<h3>مجموعة أرض النيل</h3>
+<p>Siwa - Giza - Luxor - Aswan - Alexandria</p>
+<div class="price">260 جنيه</div>
+<a class="btn" href="https://wa.me/201055880061?text=طلب مجموعة أرض النيل">اطلب</a>
 </div>
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
-<h3>بخور مكعبات</h3>
-<p>Discovery – Secret – Code</p>
-<div class="price">240 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب بخور مكعبات">اطلب</a>
+<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
+<h3>المجموعة الفرعونية</h3>
+<p>نفرتيتي - كليوباترا - توت عنخ آمون</p>
+<div class="price">270 جنيه</div>
+<a class="btn" href="https://wa.me/201055880061?text=طلب المجموعة الفرعونية">اطلب</a>
 </div>
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539">
-<h3>مجموعة أرض النيل</h3>
-<p>Siwa – Giza – Luxor – Aswan – Alexandria</p>
-<div class="price">260 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب مجموعة أرض النيل">اطلب</a>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
-<h3>المجموعة الفرعونية</h3>
-<p>نفرتيتي – توت عنخ آمون – عين حورس – الأهرامات – كليوباترا</p>
-<div class="price">270 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب المجموعة الفرعونية">اطلب</a>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
-<h3>بخور الشوكولاتة</h3>
-<p>روعة الشرق – عود مذهل – ليلة ملكي</p>
-<div class="price">230 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب بخور الشوكولاتة">اطلب</a>
+<h3>بخور مكعبات</h3>
+<p>Discovery - Secret - Code</p>
+<div class="price">240 جنيه</div>
+<a class="btn" href="https://wa.me/201055880061?text=طلب بخور مكعبات">اطلب</a>
 </div>
 
 </div>
@@ -182,7 +175,32 @@ border-top:1px solid #222;
 </section>
 
 
-<!-- المسك -->
+<section class="section" id="perfume">
+
+<h2>العطور</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1541643600914-78b084683601">
+<h3>عطر ملكي</h3>
+<p>عطر شرقي فاخر بثبات طويل</p>
+<div class="price">650 جنيه</div>
+<a class="btn" href="https://wa.me/201055880061?text=طلب عطر ملكي">اطلب</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f">
+<h3>عطر مسك</h3>
+<p>مزيج فاخر من المسك والعنبر</p>
+<div class="price">620 جنيه</div>
+<a class="btn" href="https://wa.me/201055880061?text=طلب عطر مسك">اطلب</a>
+</div>
+
+</div>
+
+</section>
+
 
 <section class="section" id="musk">
 
@@ -193,51 +211,9 @@ border-top:1px solid #222;
 <div class="product">
 <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f">
 <h3>مسك العروسة</h3>
-<p>سويت بيري – خالص المسك – مسك كاندي</p>
+<p>مسك فاخر بروائح ناعمة</p>
 <div class="price">450 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب مسك العروسة">اطلب</a>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- معطرات الجسم -->
-
-<section class="section" id="body">
-
-<h2>معطرات الجسم</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
-<h3>Body Splash</h3>
-<p>212 Sexy – Good Girl – Midnight – Coco Mademoiselle – Pink Blossom</p>
-<div class="price">120 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب معطر جسم">اطلب</a>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- المباخر -->
-
-<section class="section" id="burner">
-
-<h2>المباخر</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539">
-<h3>المبخرة الذكية</h3>
-<p>مبخرة زجاجية بتقنية التدفق العكسي للدخان.</p>
-<div class="price">350 جنيه</div>
-<a class="btn" href="https://wa.me/201055880061?text=أريد طلب المبخرة الذكية">اطلب</a>
+<a class="btn" href="https://wa.me/201055880061?text=طلب مسك العروسة">اطلب</a>
 </div>
 
 </div>
@@ -247,11 +223,58 @@ border-top:1px solid #222;
 
 <footer>
 
-<p>📞 الهاتف: 01003500353</p>
-<p>📱 واتساب: 01055880061</p>
-<p>Instagram: @AL_SAEED_TRADING_GROUP</p>
+<p>مجموعة السعيد للتجارة والاستثمار</p>
+
+<p>الهاتف: 01003500353</p>
+
+<p>واتساب: 01055880061</p>
+
+<p>Instagram: AL_SAEED_TRADING_GROUP</p>
 
 </footer>
+
+
+<script>
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(75,window.innerWidth/300,0.1,1000);
+
+const renderer = new THREE.WebGLRenderer({alpha:true});
+
+renderer.setSize(window.innerWidth,300);
+
+document.getElementById("three-container").appendChild(renderer.domElement);
+
+const geometry = new THREE.CylinderGeometry(1,1,3,32);
+
+const material = new THREE.MeshStandardMaterial({color:0xd4af37});
+
+const bottle = new THREE.Mesh(geometry,material);
+
+scene.add(bottle);
+
+const light = new THREE.PointLight(0xffffff,1);
+
+light.position.set(5,5,5);
+
+scene.add(light);
+
+camera.position.z = 5;
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+bottle.rotation.y += 0.01;
+
+renderer.render(scene,camera);
+
+}
+
+animate();
+
+</script>
 
 </body>
 </html>
